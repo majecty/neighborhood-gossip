@@ -1,0 +1,128 @@
+.img-1 {
+  background-image: url("/img/1.jpg");
+}
+
+body {
+  background: black;
+}
+
+.jh-screen {
+  /* background: red; */
+  background-position: center;
+}
+
+@media (min-aspect-ratio: 3/4) {
+  /*
+  1. wider with letter box(3/4<x)
+  * 720 < width
+  * height = 960
+  * 720 / 960 = 0.75 = 3 / 4
+  */
+  .jh-screen {
+    /* background: red; */
+    /*
+    letter box left rigt
+    height is 100%
+    width = height * 3 / 4
+    */
+    height: 100vh;
+    width: calc(100vh * 3 / 4);
+    margin-top: 0;
+    margin-left: calc((100vw - (100vh * 3 / 4)) / 2);
+    background-size: calc(100vh * 3 / 4) calc((100vh * 3 / 4) * 1388 / 720);
+  }
+}
+
+@media (min-aspect-ratio: 720/1388) and (max-aspect-ratio: 3/4) {
+  /*
+  2. wider without letter box(720 / 1388 < x < 3/4)
+  * width = 720
+  * 960 < height < 1388
+*/
+  .jh-screen {
+    /* background: blue; */
+    /*
+    letter box none
+    height is 100%
+    width is 100%
+    */
+    height: 100vh;
+    width: 100vw;
+    margin-top: 0;
+    margin-left: 0;
+
+    background-size: 100vw calc(100vw * 1388 / 720);
+  }
+}
+
+@media (aspect-ratio: 720/1388) {
+  /*
+  3. fit (720 / 1388)
+  * width = 720
+  * height = 1388
+  * 720 / 1388
+*/
+  .jh-screen {
+    /* background: green; */
+    /*
+    letter box none
+    height is 100%
+    width is 100%
+    */
+    height: 100vh;
+    width: 100vw;
+    margin-top: 0;
+    margin-left: 0;
+
+    background-size: 100vw 100vh;
+  }
+}
+
+@media (min-aspect-ratio: 6/13) and (max-aspect-ratio: 720 / 1388) {
+  /*
+  4. taller without letter box (x < 720/1388)
+  * 640 < width < 720
+  * height = 1388
+*/
+  .jh-screen {
+    /* background: purple; */
+    /*
+    letter box none
+    height is 100%
+    width is 100%
+    */
+    height: 100vh;
+    width: 100vw;
+    margin-top: 0;
+    margin-left: 0;
+
+    background-size: calc(100vh * 720 / 1388) 100vh;
+  }
+}
+
+@media (max-aspect-ratio: 6/13) {
+  /*
+  5. taller with letter box (x < 6 / 13)
+  * width = 640
+  * 1388 < height
+  * 640 / 1388 = 0.461 = 6 / 13 
+*/
+  .jh-screen {
+    /* background: yellow; */
+    /*
+    letter box up and down
+    height is width * 13 / 6
+    width is 100%
+    */
+    height: calc(100vw * 13 / 6);
+    width: 100vw;
+    margin-top: calc((100vh - (100vw * 13 / 6)) / 2);
+    margin-left: 0;
+
+    /*
+      show all height
+      show minimum width (exceeds left and right)
+    */
+    background-size: calc((100vw * 13 / 6) * 720 / 1388) calc(100vw * 13 / 6);
+  }
+}
