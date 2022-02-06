@@ -1,11 +1,24 @@
+.interactive-button {
+  position: absolute;
+}
+
 .left-enter-button {
   background-image: url("/img/left-enter-button.jpg");
+  width: 308px;
+  height: 852px;
 }
 
 .door-enter-button {
   background-image: url("/img/door-enter-button.jpg");
+  width: 284px;
+  height: 328px;
+  top: 870px;
+  left: 156px;
 }
 
 .stair-enter-button {
   background-image: url("/img/stair-enter-button.jpg");
+  width: 366px;
+  height: 318px;
+  bottom: 0px;
 }
