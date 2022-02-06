@@ -8,7 +8,19 @@ body {
 
 .jh-screen {
   /* background: red; */
+  overflow: hidden;
   background-position: center;
+  position: relative;
+}
+
+.jh-screen-inner {
+  width: 720px;
+  /* width: 360px; */
+  height: 1388px;
+  /* height: 694px; */
+  background-color: rgba(255, 255, 255, 0.6);
+  transform-origin: top left;
+  position: absolute;
 }
 
 @media (min-aspect-ratio: 3/4) {
@@ -29,8 +41,12 @@ body {
     width: calc(100vh * 3 / 4);
     margin-top: 0;
     margin-left: calc((100vw - (100vh * 3 / 4)) / 2);
+    /* height is minimum, width is maximum */
     background-size: calc(100vh * 3 / 4) calc((100vh * 3 / 4) * 1388 / 720);
   }
+  /* .jh-screen-inner { */
+  /* scale: calc(); */
+  /* } */
 }
 
 @media (min-aspect-ratio: 720/1388) and (max-aspect-ratio: 3/4) {

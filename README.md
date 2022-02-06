@@ -1,5 +1,11 @@
 # neighborhood-gossip
 
+## 1 time install
+
+```bash
+npm install
+```
+
 ## css build
 
 ```bash
