@@ -1,4 +1,12 @@
-export default screenInner = {
+import StartScene from "./startScene";
+import EmptyScreen from "./emptyScreen";
+
+export default ScreenInner = {
+  props: ["screen"],
+  components: {
+    StartScene,
+    EmptyScreen,
+  },
   mounted() {
     console.log("screenInner init");
     console.log(this.$refs.screenParent);
@@ -50,9 +58,15 @@ export default screenInner = {
   },
   template: `
     <div class="jh-screen-inner">
-      <button class="left-enter-button interactive-button" />
-      <button class="door-enter-button interactive-button" />
-      <button class="stair-enter-button interactive-button" />
+      <StartScene v-if="screen === 'start'"
+        v-on:left-enter-button-clicked="$emit('left-enter-button-clicked')"
+        v-on:door-enter-button-clicked="$emit('door-enter-button-clicked')"
+        v-on:stair-enter-button-clicked="$emit('stair-enter-button-clicked')"
+      />
+      <EmptyScreen v-if="screen !== 'start'"
+      class="w-full h-full"
+        v-on:move-back="$emit('move-back')"
+      />
     </div>
   `,
 };

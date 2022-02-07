@@ -1,4 +1,5 @@
 // import Alpine from "alpinejs";
+import ScreenParent from "./screenParent";
 import ScreenInner from "./screenInner";
 
 // window.Alpine = Alpine;
@@ -14,6 +15,7 @@ import ScreenInner from "./screenInner";
 
 Vue.createApp({
   components: {
+    ScreenParent,
     ScreenInner,
   },
 }).mount("#app");
