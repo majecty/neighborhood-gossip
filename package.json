@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "alpinejs": "^3.8.1",
     "esbuild": "^0.14.18",
     "postcss": "^8.4.6",
     "serve": "^13.0.2",

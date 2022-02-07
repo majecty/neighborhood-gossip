@@ -21,5 +21,5 @@ npx serve static
 ## bundle js
 
 ```bash
-npx esbuild src/js/app.js --bundle --outfile=static/js/bundle.js
+npx esbuild --watch src/js/app.js --bundle --outfile=static/js/bundle.js
 ```
