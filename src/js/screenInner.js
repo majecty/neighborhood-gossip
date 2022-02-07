@@ -1,5 +1,6 @@
 export default screenInner = {
-  init() {
+  mounted() {
+    console.log("screenInner init");
     console.log(this.$refs.screenParent);
     console.log(this.$refs.screenInner);
     console.log(this.$el);
@@ -47,4 +48,11 @@ export default screenInner = {
     console.log(this.$refs);
     console.log(this);
   },
+  template: `
+    <div class="jh-screen-inner">
+      <button class="left-enter-button interactive-button" />
+      <button class="door-enter-button interactive-button" />
+      <button class="stair-enter-button interactive-button" />
+    </div>
+  `,
 };
