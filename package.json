@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "build": "esbuild src/js/app.js --bundle --outfile=static/js/bundle.js"
+  },
   "devDependencies": {
     "alpinejs": "^3.8.1",
     "esbuild": "^0.14.18",
