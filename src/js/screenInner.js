@@ -1,5 +1,5 @@
-import StartScene from "./startScene";
-import EmptyScreen from "./emptyScreen";
+import StartScene from "./scenes/startScene";
+import EmptyScreen from "./scenes/emptyScreen";
 
 export default ScreenInner = {
   props: ["screen"],
