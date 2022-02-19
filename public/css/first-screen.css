@@ -3,22 +3,41 @@
 }
 
 .left-enter-button {
-  background-image: url("/img/left-enter-button.jpg");
-  width: 308px;
-  height: 852px;
+  background-image: url("/img/mainStreet/left-button.png");
+  width: 544px;
+  height: 353px;
+  left: 200px;
+  top: 730px;
+  scale: 0.2;
+  transform-origin: top left;
 }
 
 .door-enter-button {
-  background-image: url("/img/door-enter-button.jpg");
-  width: 284px;
-  height: 328px;
-  top: 870px;
-  left: 156px;
+  background-image: url("/img/mainStreet/door-button.png");
+  width: 338px;
+  height: 431px;
+  top: 1000px;
+  left: 306px;
+  scale: 0.2;
+  transform-origin: top left;
 }
 
 .stair-enter-button {
-  background-image: url("/img/stair-enter-button.jpg");
-  width: 366px;
-  height: 318px;
-  bottom: 0px;
+  background-image: url("/img/mainStreet/stair-button.png");
+  width: 527px;
+  height: 309px;
+  bottom: 10px;
+  left: 10px;
+  scale: 0.3;
+  transform-origin: bottom left;
+}
+
+.info-enter-button {
+  background-image: url("/img/mainStreet/info-button.png");
+  width: 1706px;
+  height: 1406px;
+  bottom: 10px;
+  right: 0px;
+  scale: 0.1;
+  transform-origin: bottom right;
 }

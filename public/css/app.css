@@ -18,6 +18,14 @@
   background-image: url("/img/info.png")
 }
 
+.visible-region {
+  pointer-events: none;
+}
+
+.visible-region * {
+  pointer-events: all;
+}
+
 body {
   background: black;
 }
@@ -34,9 +42,15 @@ body {
   /* width: 360px; */
   height: 1388px;
   /* height: 694px; */
-  background-color: rgba(255, 255, 255, 0.6);
+  /*background-color: rgba(255, 255, 255, 0.6);*/
   transform-origin: top left;
   position: absolute;
+}
+
+.jh-visible-parent {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
 }
 
 @media (min-aspect-ratio: 3/4) {

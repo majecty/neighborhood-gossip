@@ -2,6 +2,7 @@
 //import Vue from "vue";
 import {createApp} from "vue";
 import RootNode from "./rootNode.vue";
+import "../css/input.css"
 
 // window.Alpine = Alpine;
 // Alpine.start();

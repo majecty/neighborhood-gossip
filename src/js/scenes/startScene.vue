@@ -3,9 +3,13 @@ import { sound } from "../sound";
 import { screen } from "../data/screen";
 import { background } from "../data/background";
 import {SceneNames} from "./common";
+import VisibleRegion from "./visibleRegion.vue";
 
 export default {
   name: 'StartScene',
+  components: {
+    VisibleRegion,
+  },
   data() {
     return {
       screen,
@@ -37,6 +41,10 @@ export default {
   mounted() {
     sound.play("start");
     console.log("play start");
+
+
+    // change left and right
+    // give top, bottom, left, right
   },
   unmounted() {
     sound.stop("start");
@@ -51,10 +59,12 @@ export default {
 <button class="door-enter-button interactive-button"
   v-on:click="this.onClick('door')"
 />
-<button class="stair-enter-button interactive-button"
-  v-on:click="this.onClick('stair')"
-/>
-<button class="info-enter-button interactive-button"
-  v-on:click="this.onClick('info')"
-/>
+<visible-region>
+  <button class="stair-enter-button interactive-button"
+      v-on:click="this.onClick('stair')"
+    />
+  <button class="info-enter-button interactive-button"
+    v-on:click="this.onClick('info')"
+  />
+</visible-region>
 </template>
