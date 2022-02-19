@@ -1,17 +1,21 @@
-.img-1 {
-  background-image: url("/img/1.jpg");
+.img-main-street {
+  background-image: url("/img/main_street.png");
 }
 
-.img-2 {
-  background-image: url("/img/2.jpg");
+.img-backgol-street {
+  background-image: url("/img/Baekgol_.png");
 }
 
-.img-3 {
-  background-image: url("/img/3.jpg");
+.img-bongcheonlady-street {
+  background-image: url("/img/Bongcheonlady_.png");
 }
 
-.img-4 {
-  background-image: url("/img/4.jpg");
+.img-bomi-street {
+  background-image: url("/img/Bomi_.png");
+}
+
+.img-info-page {
+  background-image: url("/img/info.png")
 }
 
 body {

@@ -1,23 +1,14 @@
 import {reactive} from 'vue';
+import {BackgroundCSS, MainStreetCSS} from "../scenes/common";
 
 export const background = reactive({
-  css: "img-1",
+  css: MainStreetCSS,
 
   setBackground(background) {
     this.css = this.backgroundToCSS(background);
   },
 
   backgroundToCSS(background) {
-    switch (background) {
-      case "start":
-        return "img-1";
-      case "left":
-        return "img-2";
-      case "door":
-        return "img-3";
-      case "stair":
-        return "img-4";
-    }
+    return BackgroundCSS[background];
   }
-
 });

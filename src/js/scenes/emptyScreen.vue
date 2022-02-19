@@ -2,6 +2,7 @@
 import { screen } from "../data/screen";
 import { background } from "../data/background";
 import {sound} from "../sound";
+import { SceneNames } from "./common";
 
 export default {
   name: "EmptyScreen",
@@ -20,7 +21,7 @@ export default {
   },
   methods: {
     onClick() {
-      this.screen.setScreen("start");
+      this.screen.setScreen(SceneNames.MainStreet);
       this.background.setBackground(this.screen.screen);
     }
   },
