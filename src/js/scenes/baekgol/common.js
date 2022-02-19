@@ -1,4 +1,4 @@
 export const BaekgolState = {
   Idle: "Idle",
-  NameTagMain: "NameTagMain",
+  Diary: "Diary",
 };

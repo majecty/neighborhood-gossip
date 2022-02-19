@@ -1,18 +1,18 @@
 <script>
 export default {
-  name: "NameTagMain",
+  name: "DiaryMain",
 };
 </script>
 
 <template>
 <div cl>
 </div>
-<div id="name-tag" class="absolute">
+<div id="diary" class="absolute">
 </div>
 </template>
 
 <style>
-#name-tag {
+#diary {
   background-image: url("/img/baekgol/baekgol_diary.png");
   width: 2987px;
   height: 2128px;

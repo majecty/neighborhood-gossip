@@ -1,15 +1,15 @@
 <script>
 export default {
-  name: "NameTagButton"
+  name: "DiaryButton"
 };
 </script>
 
 <template>
-<button id="name-tag-button" class="interactive-button" />
+<button id="diary-button" class="interactive-button" />
 </template>
 
 <style>
-#name-tag-button {
+#diary-button {
   background-image: url("/img/baekgol/baekgol_diary.png");
   width: 2987px;
   height: 2128px;
