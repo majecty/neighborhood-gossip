@@ -11,7 +11,7 @@ export const BackgroundCSS = {
   [SceneNames.BaekgolStreet]: "img-backgol-street",
   [SceneNames.BongcheonladyStreet]: "img-bongcheonlady-street",
   [SceneNames.BomiStreet]: "img-bomi-street",
-  [SceneNames.InfoPage]: "img-init-page"
+  [SceneNames.InfoPage]: "img-info-page"
 };
 
 export const MainStreetCSS = BackgroundCSS[SceneNames.MainStreet];
