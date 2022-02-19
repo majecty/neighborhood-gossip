@@ -1,7 +1,7 @@
-import StartScene from "./scenes/startScene";
+import StartScene from "./scenes/startScene.vue";
 import EmptyScreen from "./scenes/emptyScreen";
 
-export default ScreenInner = {
+const ScreenInner = {
   props: ["screen"],
   components: {
     StartScene,
@@ -9,9 +9,6 @@ export default ScreenInner = {
   },
   mounted() {
     console.log("screenInner init");
-    console.log(this.$refs.screenParent);
-    console.log(this.$refs.screenInner);
-    console.log(this.$el);
 
     const width = document.body.clientWidth;
     const height = window.innerHeight;
@@ -70,3 +67,5 @@ export default ScreenInner = {
     </div>
   `,
 };
+
+export default ScreenInner;

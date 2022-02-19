@@ -1,6 +1,6 @@
-import { sound } from "../sound";
+import {sound} from "../sound";
 
-export default EmptyScreen = {
+const EmptyScreen = {
   mounted() {
     sound.play("second");
     console.log("play second");
@@ -13,3 +13,5 @@ export default EmptyScreen = {
     </div>
     `,
 };
+
+export default EmptyScreen;

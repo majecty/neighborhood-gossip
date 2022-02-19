@@ -1,6 +1,6 @@
 import ScreenInner from "./screenInner";
 
-export default ScreenParent = {
+const ScreenParent = {
   components: {
     ScreenInner,
   },
@@ -39,3 +39,5 @@ export default ScreenParent = {
   </div>
     `,
 };
+
+export default ScreenParent;
