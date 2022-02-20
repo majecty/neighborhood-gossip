@@ -1,4 +1,4 @@
-import { Howl } from "howler";
+import {Howl} from "howler";
 
 class Sound {
   constructor() {
@@ -16,9 +16,13 @@ class Sound {
   play(name) {
     switch (name) {
       case "start":
+        console.log("play start sound");
+        this.startSound.fade(0, 1, 1000);
         this.startSound.play();
         break;
       case "second":
+        console.log("play second sound");
+        this.secondSound.fade(0, 1, 1000);
         this.secondSound.play();
         break;
     }
@@ -26,10 +30,20 @@ class Sound {
   stop(name) {
     switch (name) {
       case "start":
-        this.startSound.stop();
+        console.log("stop start sound");
+        this.startSound.fade(1, 0, 1000);
+        setTimeout(() => {
+          this.startSound.stop();
+        }, 1000);
+        this.transitionSound.play();
         break;
       case "second":
-        this.secondSound.stop();
+        console.log("stop second sound");
+        this.secondSound.fade(1, 0, 1000);
+        setTimeout(() => {
+          this.secondSound.stop();
+        }, 1000);
+        this.transitionSound.play();
         break;
     }
   }
