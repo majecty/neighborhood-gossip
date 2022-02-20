@@ -16,7 +16,9 @@ export default {
       const scrollRate = top / (scrollHeight - clientHeight);
       this.sound.diarySound.volume(0.3 + scrollRate * 0.7);
       this.sound.play("diary");
-    }, 1000);
+    }, 1000, {
+      trailing: false
+    });
   },
   mounted() {
     this.sound.play("diary");
