@@ -11,6 +11,9 @@ class Sound {
     this.transitionSound = new Howl({
       src: ["/sound/transition.mp3"],
     });
+    this.diarySound = new Howl({
+      src: ["/sound/diary.mp3"],
+    });
   }
 
   play(name) {
@@ -25,8 +28,13 @@ class Sound {
         this.secondSound.fade(0, 1, 1000);
         this.secondSound.play();
         break;
+      case "diary":
+        console.log("play diary sound");
+        this.diarySound.play();
+        break;
     }
   }
+
   stop(name) {
     switch (name) {
       case "start":
@@ -44,6 +52,10 @@ class Sound {
           this.secondSound.stop();
         }, 1000);
         this.transitionSound.play();
+        break;
+      case "diary":
+        console.log("stop diary sound");
+        this.diarySound.stop();
         break;
     }
   }
