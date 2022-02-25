@@ -3,6 +3,7 @@ import NameTagButton from "./bongcheonlady/nameTagButton.vue";
 import NameTagMain from "./bongcheonlady/nameTagMain.vue";
 import PhoneBookButton from "./bongcheonlady/phoneBookButton.vue";
 import PhoneBookMain from "./bongcheonlady/phoneBookMain.vue";
+import PhoneBookPhoto from "./bongcheonlady/phoneBookPhoto.vue";
 import { BongcheonladyState } from "./bongcheonlady/common";
 
 export default {
@@ -12,6 +13,7 @@ export default {
     NameTagMain,
     PhoneBookButton,
     PhoneBookMain,
+    PhoneBookPhoto,
   },
   created() {
     this.BongcheonladyState = BongcheonladyState;
@@ -43,5 +45,8 @@ export default {
   ></div>
 
   <NameTagMain v-if="state === BongcheonladyState.NameTag" />
-  <PhoneBookMain v-if="state === BongcheonladyState.PhoneBook" />
+  <PhoneBookMain v-if="state === BongcheonladyState.PhoneBook" 
+    @click="onClick(BongcheonladyState.PhoneBookPhoto) "/>
+  <PhoneBookPhoto v-if="state === BongcheonladyState.PhoneBookPhoto"
+    @click="onClick(BongcheonladyState.PhoneBook)" />
 </template>
