@@ -7,10 +7,12 @@ import HealthInsuranceButton from "./baekgol/healthInsuranceButton.vue";
 import HealthInsuranceMain from "./baekgol/healthInsuranceMain.vue";
 import DaisoReceiptButton from "./baekgol/daisoReceiptButton.vue";
 import DaisoReceiptMain from "./baekgol/daisoReceiptMain.vue";
+import BackButton from "./common/backButton.vue";
 import { BaekgolState } from "./baekgol/common";
 
 export default {
   name: "BaekgolScreen",
+  emits: ["back"],
   components: {
     VisibleRegion,
     DiaryButton,
@@ -20,6 +22,7 @@ export default {
     HealthInsuranceMain,
     DaisoReceiptButton,
     DaisoReceiptMain,
+    BackButton,
   },
   created() {
     this.BaekgolState = BaekgolState;
@@ -33,6 +36,25 @@ export default {
     onClick(state) {
       this.state = state;
     },
+    back() {
+      switch (this.state) {
+        case BaekgolState.Diary:
+          this.state = BaekgolState.Idle;
+          break;
+        case BaekgolState.DiaryText:
+          this.state = BaekgolState.Diary;
+          break;
+        case BaekgolState.HealthInsurance:
+          this.state = BaekgolState.Idle;
+          break;
+        case BaekgolState.DaisoReceipt:
+          this.state = BaekgolState.Idle;
+          break;
+        default:
+          this.$emit("back");
+          break;
+      }
+    },
   }
 };
 </script>
@@ -45,10 +67,6 @@ export default {
   <DaisoReceiptButton v-if="state === BaekgolState.Idle"
     @click="onClick(BaekgolState.DaisoReceipt)" />
 
-  <div id="cancel-background" v-if="state !== BaekgolState.Idle"
-    class="absolute w-full h-full top-0"
-    @click="onClick(BaekgolState.Idle)"></div>
-
   <DiaryMain v-if="state === BaekgolState.Diary"
     @click="onClick(BaekgolState.DiaryText)" />
   <VisibleRegion>
@@ -56,4 +74,6 @@ export default {
   </VisibleRegion>
   <HealthInsuranceMain v-if="state === BaekgolState.HealthInsurance"/>
   <DaisoReceiptMain v-if="state === BaekgolState.DaisoReceipt"/>
+
+  <BackButton @back="back"/>
 </template>
