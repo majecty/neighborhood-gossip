@@ -3,4 +3,5 @@ export const BongcheonladyState = {
   NameTag: "NameTag",
   PhoneBook: "PhoneBook",
   PhoneBookPhoto: "PhoneBookPhoto",
+  HandPrints: "HandPrints",
 };

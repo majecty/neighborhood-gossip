@@ -4,6 +4,8 @@ import NameTagMain from "./bongcheonlady/nameTagMain.vue";
 import PhoneBookButton from "./bongcheonlady/phoneBookButton.vue";
 import PhoneBookMain from "./bongcheonlady/phoneBookMain.vue";
 import PhoneBookPhoto from "./bongcheonlady/phoneBookPhoto.vue";
+import HandPrintsButton from "./bongcheonlady/handPrintsButton.vue";
+import HandPrintsMain from "./bongcheonlady/handPrintsMain.vue";
 import { BongcheonladyState } from "./bongcheonlady/common";
 
 export default {
@@ -14,6 +16,8 @@ export default {
     PhoneBookButton,
     PhoneBookMain,
     PhoneBookPhoto,
+    HandPrintsButton,
+    HandPrintsMain,
   },
   created() {
     this.BongcheonladyState = BongcheonladyState;
@@ -38,6 +42,9 @@ export default {
   <PhoneBookButton v-if="state === BongcheonladyState.Idle"
     @click="onClick(BongcheonladyState.PhoneBook)"
   />
+  <HandPrintsButton v-if="state === BongcheonladyState.Idle"
+    @click="onClick(BongcheonladyState.HandPrints)"
+  />
 
   <div id="cancel-button" v-if="state !== BongcheonladyState.Idle"
     class="absolute w-full h-full top-0"
@@ -49,4 +56,5 @@ export default {
     @click="onClick(BongcheonladyState.PhoneBookPhoto) "/>
   <PhoneBookPhoto v-if="state === BongcheonladyState.PhoneBookPhoto"
     @click="onClick(BongcheonladyState.PhoneBook)" />
+  <HandPrintsMain v-if="state === BongcheonladyState.HandPrints" />
 </template>
