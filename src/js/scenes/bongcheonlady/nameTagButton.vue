@@ -13,9 +13,9 @@ export default {
   background-image: url("/img/bongcheonlady/name_tag.png");
   width: 833px;
   height: 591px;
-  scale: 0.05;
+  scale: 0.04;
   transform-origin: top left;
-  top: 1020px;
-  left: 400px;
+  top: 920px;
+  left: 515px;
 }
 </style>
