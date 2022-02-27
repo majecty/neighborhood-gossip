@@ -4,16 +4,19 @@ import { screen } from "../data/screen";
 import { background } from "../data/background";
 import {SceneNames} from "./common";
 import VisibleRegion from "./visibleRegion.vue";
+import IdlePopup from "./startScene/idlePopup.vue";
 
 export default {
   name: 'StartScene',
   components: {
     VisibleRegion,
+    IdlePopup,
   },
   data() {
     return {
       screen,
-      background
+      background,
+      showIdle: false
     };
   },
   methods: {
@@ -40,11 +43,11 @@ export default {
   },
   mounted() {
     sound.play("start");
-    console.log("play start");
+    setTimeout(() => {
+      this.showIdle = true;
+    }, 3000);
 
-
-    // change left and right
-    // give top, bottom, left, right
+    // start timeout
   },
   unmounted() {
     sound.stop("start");
@@ -67,4 +70,5 @@ export default {
     v-on:click="this.onClick('info')"
   />
 </visible-region>
+<IdlePopup @back="showIdle=false" v-if="showIdle" />
 </template>
