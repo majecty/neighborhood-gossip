@@ -14,7 +14,6 @@ export default {
   },
   mounted() {
     sound.play("second");
-    console.log("play second");
   },
   unmounted() {
     sound.stop("second");

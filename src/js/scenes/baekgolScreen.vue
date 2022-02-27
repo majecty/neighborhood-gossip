@@ -1,4 +1,5 @@
 <script>
+import {sound} from "../sound";
 import VisibleRegion from "./visibleRegion.vue";
 import DiaryButton from "./baekgol/diaryButton.vue";
 import DiaryMain from "./baekgol/diaryMain.vue";
@@ -31,6 +32,12 @@ export default {
     return {
       state: BaekgolState.Idle
     };
+  },
+  mounted() {
+    sound.play("second");
+  },
+  unmounted() {
+    sound.stop("second");
   },
   methods: {
     onClick(state) {

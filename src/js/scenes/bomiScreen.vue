@@ -5,6 +5,7 @@ import BomiSpottedButton from "./bomi/bomiSpottedButton.vue";
 import BomiSpottedMain from "./bomi/bomiSpottedMain.vue";
 import { BomiState } from "./bomi/common";
 import BackButton from "./common/backButton.vue";
+import { sound } from "../sound";
 
 export default {
   name: "BomiScreen",
@@ -23,6 +24,12 @@ export default {
     return {
       state: BomiState.Idle
     };
+  },
+  mounted() {
+    sound.play("second");
+  },
+  unmounted() {
+    sound.stop("second");
   },
   methods: {
     back() {

@@ -8,6 +8,7 @@ import HandPrintsButton from "./bongcheonlady/handPrintsButton.vue";
 import HandPrintsMain from "./bongcheonlady/handPrintsMain.vue";
 import BackButton from "./common/backButton.vue";
 import { BongcheonladyState } from "./bongcheonlady/common";
+import { sound } from "../sound";
 
 export default {
   name: "BongcheonladyStreet",
@@ -29,6 +30,12 @@ export default {
     return {
       state: BongcheonladyState.Idle, 
     };
+  },
+  mounted() {
+    sound.play("second");
+  },
+  unmounted() {
+    sound.stop("second");
   },
   methods: {
     onClick(state) {
