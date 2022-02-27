@@ -7,6 +7,7 @@ import StartScene from "./startScene.vue";
 import BaekgolScreen from "./baekgolScreen.vue";
 import BongcheonladyScreen from "./bongcheonladyScreen.vue";
 import BomiScreen from "./bomiScreen.vue";
+import InfoPage from "./infoPage.vue";
 import {SceneNames} from "./common";
 
 export default {
@@ -21,6 +22,7 @@ export default {
     BaekgolScreen,
     BongcheonladyScreen,
     BomiScreen,
+    InfoPage,
   },
   data() {
     return {
@@ -48,5 +50,7 @@ export default {
   <BongcheonladyScreen v-if="screen.screen === SceneNames.BongcheonladyStreet"
     @back="back" />
   <BomiScreen v-if="screen.screen === SceneNames.BomiStreet"
+    @back="back" />
+  <InfoPage v-if="screen.screen === SceneNames.InfoPage"
     @back="back" />
 </template>
