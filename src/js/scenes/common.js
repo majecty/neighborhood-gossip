@@ -1,4 +1,5 @@
 export const SceneNames = {
+  PrologScreen: 'PrologScreen',
   MainStreet: "MainStreet",
   BaekgolStreet: "BaekgolStreet",
   BongcheonladyStreet: "BongcheonladyStreet",
@@ -7,6 +8,7 @@ export const SceneNames = {
 };
 
 export const BackgroundCSS = {
+  [SceneNames.PrologScreen]: "img-main-street",
   [SceneNames.MainStreet]: "img-main-street",
   [SceneNames.BaekgolStreet]: "img-backgol-street",
   [SceneNames.BongcheonladyStreet]: "img-bongcheonlady-street",

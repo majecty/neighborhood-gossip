@@ -1,6 +1,7 @@
 <script>
 import {screen} from "../data/screen.js";
 import {background} from "../data/background.js";
+import PrologScreen from "./prologScreen.vue";
 import StartScene from "./startScene.vue";
 /*import EmptyScreen from "./emptyScreen.vue";*/
 import BaekgolScreen from "./baekgolScreen.vue";
@@ -14,6 +15,7 @@ export default {
     this.SceneNames = SceneNames;
   },
   components: {
+    PrologScreen,
     StartScene,
     /*EmptyScreen,*/
     BaekgolScreen,
@@ -36,6 +38,7 @@ export default {
 </script>
 
 <template>
+  <PrologScreen v-if="screen.screen === SceneNames.PrologScreen" />
   <StartScene v-if="screen.screen === SceneNames.MainStreet"/>
   <!-- EmptyScreen v-if="screen.screen !== SceneNames.MainStreet"
     class="w-full h-full"
