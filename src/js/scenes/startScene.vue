@@ -45,7 +45,7 @@ export default {
     sound.play("start");
     setTimeout(() => {
       this.showIdle = true;
-    }, 3000);
+    }, 5000);
 
     // start timeout
   },

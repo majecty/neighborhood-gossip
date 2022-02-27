@@ -21,7 +21,7 @@ export default {
     가만히 계셨군요. <br />
     화살표를 눌러서 <br />
     다른 페이지를<br />
-    탐헝해 보세요.
+    탐험해 보세요.
   </p>
 </div>
 <BackButton @click="$emit('back')" />
