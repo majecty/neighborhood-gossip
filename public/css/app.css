@@ -75,7 +75,7 @@ body {
     background-size: calc(100vh * 3 / 4) calc((100vh * 3 / 4) * 1388 / 720);
   }
   /* .jh-screen-inner { */
-  /* scale: calc(); */
+  /* transform: scale(calc()); */
   /* } */
 }
 

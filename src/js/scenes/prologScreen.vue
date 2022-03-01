@@ -46,7 +46,7 @@ export default {
   background-image: url("/img/prolog/enter.png");
   width: 311px;
   height: 122px;
-  scale: 0.5;
+  transform: scale(0.5);
   transform-origin: top left;
   /*top: 1200px;*/
   bottom: 100px;

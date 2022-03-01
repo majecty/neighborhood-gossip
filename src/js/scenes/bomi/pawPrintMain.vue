@@ -14,7 +14,7 @@ export default {
   background-image: url("/img/bomi/paw_print_photo.jpg");
   width: 3024px;
   height: 4032px;
-  scale: 0.4;
+  transform: scale(0.4);
   transform-origin: top left;
   top: 0px;
   left: 0px;

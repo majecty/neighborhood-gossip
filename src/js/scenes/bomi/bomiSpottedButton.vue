@@ -13,7 +13,7 @@ export default {
   background-image: url("/img/bomi/bomi_spotted.png");
   width: 308px;
   height: 705px;
-  scale: 0.2;
+  transform: scale(0.2);
   transform-origin: top left;
   top: 660px;
   left: 40px;

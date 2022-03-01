@@ -13,7 +13,7 @@ export default {
   background-image: url("/img/bongcheonlady/phone_book.png");
   width: 1500px;
   height: 1150px;
-  scale: 0.08;
+  transform: scale(0.08);
   transform-origin: top left;
   top: 1080px;
   left: 390px;

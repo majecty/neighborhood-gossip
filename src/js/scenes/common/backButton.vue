@@ -22,7 +22,7 @@ export default {
   background-image: url("/img/common/back.png");
   width: 493px;
   height: 290px;
-  scale: 0.3;
+  transform: scale(0.3);
   transform-origin: top left;
   top: 50px;
   left: 50px;

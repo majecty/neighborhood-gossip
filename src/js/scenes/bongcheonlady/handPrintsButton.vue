@@ -13,7 +13,7 @@ export default {
   background-image: url("/img/bongcheonlady/handprints.png");
   width: 188px;
   height: 100px;
-  scale: 0.7;
+  transform: scale(0.7);
   transform-origin: top left;
   top: 1100px;
   left: 230px;
