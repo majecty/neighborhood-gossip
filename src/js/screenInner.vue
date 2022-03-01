@@ -19,7 +19,8 @@ export default {
         const screenWidth = height * (3 / 4);
         // 720 is full width
         const scale = screenWidth / 720;
-        this.$el.style.scale = scale;
+        this.$el.style.transform = `scale(${scale})`;
+        console.log("scale", scale);
         const totalHeight = 1388;
         const visibleHeight = 960;
         this.$el.style.top = `-${((totalHeight - visibleHeight) / 2) * scale}px`;
@@ -27,15 +28,17 @@ export default {
       // width is 100%
         console.log("width is full");
         const scale = width / 720;
-        this.$el.style.scale = scale;
+        console.log("scale", scale);
         const totalHeight = 1388;
         const visibleHeight = (720 * height) / width;
         this.$el.style.top = `-${((totalHeight - visibleHeight) / 2) * scale}px`;
+        this.$el.style.transform = `scale(${scale})`;
       } else if (width / height > 6 / 13) {
         console.log("height is full");
         // height is 100%;
         const scale = height / 1388;
-        this.$el.style.scale = scale;
+        this.$el.style.transform = `scale(${scale})`;
+        console.log("scale", scale);
         const totalWidth = 720;
         const visibleWidth = (1388 * width) / height;
         this.$el.style.left = `-${((totalWidth - visibleWidth) / 2) * scale}px`;
@@ -45,7 +48,8 @@ export default {
         const screenHeight = (width * 13) / 6;
         const scale = screenHeight / 1388;
 
-        this.$el.style.scale = scale;
+        this.$el.style.transform = `scale(${scale})`;
+        console.log("scale", scale);
         const totalWidth = 720;
         const visibleWidth = 640;
         this.$el.style.left = `-${((totalWidth - visibleWidth) / 2) * scale}px`;
