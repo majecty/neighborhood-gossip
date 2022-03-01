@@ -26,6 +26,13 @@
   pointer-events: all;
 }
 
+html, body {
+  overflow-y: hidden;
+}
+body {
+  position: relative;
+}
+
 body {
   background: black;
 }
