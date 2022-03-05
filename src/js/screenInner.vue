@@ -1,8 +1,20 @@
 <script>
+
+// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+let vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+window.addEventListener('resize', () => {
+  // We execute the same script as before
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+
 export default {
   name: "ScreeInner",
   created() {
     window.addEventListener("resize", this.resize);
+    setTimeout(this.resize, 1000);
   },
   destroyed() {
     window.removeEventListener("resize", this.resize);
@@ -13,50 +25,55 @@ export default {
 
       const width = document.body.clientWidth;
       const height = window.innerHeight;
+      let top = 0;
+      let left = 0;
+      let scale = 1;
       if (width / height > 3 / 4) {
         console.log("height is minimum");
         // height is minimum
         const screenWidth = height * (3 / 4);
         // 720 is full width
         const scale = screenWidth / 720;
-        this.$el.style.transform = `scale(${scale})`;
         console.log("scale", scale);
         const totalHeight = 1388;
         const visibleHeight = 960;
-        this.$el.style.top = `-${((totalHeight - visibleHeight) / 2) * scale}px`;
+        top = -((totalHeight - visibleHeight) / 2) * scale;
       } else if (width / height > 720 / 1388) {
       // width is 100%
         console.log("width is full");
-        const scale = width / 720;
-        console.log("scale", scale);
+        scale = width / 720;
         const totalHeight = 1388;
         const visibleHeight = (720 * height) / width;
-        this.$el.style.top = `-${((totalHeight - visibleHeight) / 2) * scale}px`;
-        this.$el.style.transform = `scale(${scale})`;
+        top = -((totalHeight - visibleHeight) / 2) * scale;
       } else if (width / height > 6 / 13) {
         console.log("height is full");
         // height is 100%;
-        const scale = height / 1388;
-        this.$el.style.transform = `scale(${scale})`;
-        console.log("scale", scale);
+        scale = height / 1388;
         const totalWidth = 720;
         const visibleWidth = (1388 * width) / height;
-        this.$el.style.left = `-${((totalWidth - visibleWidth) / 2) * scale}px`;
+        left = -((totalWidth - visibleWidth) / 2) * scale;
       } else {
       // width is minimum
         console.log("width is minimum");
         const screenHeight = (width * 13) / 6;
-        const scale = screenHeight / 1388;
+        scale = screenHeight / 1388;
 
-        this.$el.style.transform = `scale(${scale})`;
-        console.log("scale", scale);
         const totalWidth = 720;
         const visibleWidth = 640;
-        this.$el.style.left = `-${((totalWidth - visibleWidth) / 2) * scale}px`;
+        left = -((totalWidth - visibleWidth) / 2) * scale;
       }
 
-      console.log(this.$refs);
-      console.log(this);
+/*scale = scale * 0.7;*/
+      this.$el.style.transform = `scale(${scale})`;
+      this.$el.style.top = `${top}px`;
+      this.$el.style.left = `${left}px`;
+      console.log(JSON.stringify({
+        width,
+        height,
+        scale,
+        top,
+        left,
+      }));
     },
   },
   mounted() {
