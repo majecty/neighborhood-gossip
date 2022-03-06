@@ -45,7 +45,7 @@ export default {
     sound.play("start");
     setTimeout(() => {
       this.showIdle = true;
-    }, 5000);
+    }, 10 * 1000);
 
     // start timeout
   },
@@ -62,13 +62,56 @@ export default {
 <button class="door-enter-button interactive-button"
   v-on:click="this.onClick('door')"
 />
+<button class="info-enter-button interactive-button"
+  v-on:click="this.onClick('info')"
+/>
 <visible-region>
   <button class="stair-enter-button interactive-button"
       v-on:click="this.onClick('stair')"
     />
-  <button class="info-enter-button interactive-button"
-    v-on:click="this.onClick('info')"
-  />
 </visible-region>
 <IdlePopup @back="showIdle=false" v-if="showIdle" />
 </template>
+
+<style>
+
+.left-enter-button {
+  background-image: url("/img/mainStreet/left-button.png");
+  width: 544px;
+  height: 353px;
+  left: 200px;
+  top: 730px;
+  transform: scale(0.2);
+  transform-origin: top left;
+}
+
+.door-enter-button {
+  background-image: url("/img/mainStreet/door-button.png");
+  width: 338px;
+  height: 431px;
+  top: 1000px;
+  left: 306px;
+  transform: scale(0.2);
+  transform-origin: top left;
+}
+
+.stair-enter-button {
+  background-image: url("/img/mainStreet/stair-button.png");
+  width: 527px;
+  height: 309px;
+  bottom: 10px;
+  left: 10px;
+  transform: scale(0.3);
+  transform-origin: bottom left;
+}
+
+.info-enter-button {
+  background-image: url("/img/mainStreet/poster_mainstreet_icon.png");
+  width: 591px;
+  height: 835px;
+  transform-origin: top left;
+  top: 330px;
+  left: 570px;
+  transform: scale(0.1);
+}
+</style>
