@@ -33,7 +33,7 @@ export default {
         // height is minimum
         const screenWidth = height * (3 / 4);
         // 720 is full width
-        const scale = screenWidth / 720;
+        scale = screenWidth / 720;
         console.log("scale", scale);
         const totalHeight = 1388;
         const visibleHeight = 960;
