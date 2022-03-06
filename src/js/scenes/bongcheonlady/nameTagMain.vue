@@ -12,11 +12,13 @@ export default {
 <style>
 #name-tag {
   background-image: url("/img/bongcheonlady/name_tag_photo.jpg");
-  width: 3024px;
-  height: 3024px;
-  transform: scale(0.2);
-  transform-origin: top left;
-  top: 420px;
-  left: 60px;
+  width: 850px;
+  height: 1134px;
+  transform: scale(0.65);
+  transform-origin: center;
+  /*top: 420px;*/
+  /*left: 60px;*/
+  top: calc(50% - 575px);
+  left: calc(50% - 425px);
 }
 </style>
