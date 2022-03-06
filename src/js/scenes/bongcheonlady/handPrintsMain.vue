@@ -12,11 +12,11 @@ export default {
 <style>
 #hand-print {
   background-image: url("/img/bongcheonlady/handprints_photo.jpg");
-  width: 3024px;
-  height: 4032px;
-  transform: scale(0.3);
-  transform-origin: top left;
-  top: 0px;
-  left: 0px;
+  width: 992px;
+  height: 1323px;
+  transform: scale(0.6);
+  transform-origin: center;
+  top: calc(50% - 1323px / 2);
+  left: calc(50% - 992px / 2);
 }
 </style>
