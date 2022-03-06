@@ -14,9 +14,9 @@ export default {
   background-image: url("/img/baekgol/health_insurance.png");
   width: 1091px;
   height: 970px;
-  transform: scale(0.65);
-  transform-origin: top left;
-  top: 420px;
-  left: 0px;
+  transform: scale(0.53);
+  transform-origin: center;
+  top: calc(50% - 495px);
+  left: calc(50% - 547px);
 }
 </style>
