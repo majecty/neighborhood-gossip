@@ -1,5 +1,5 @@
 <script>
-import BackButton from "../common/backButton.vue";
+import VisibleRegion from "../visibleRegion.vue";
 
 export default {
   name: "IdlePopup",
@@ -7,7 +7,7 @@ export default {
     "back",
   ],
   components: {
-    BackButton,
+    VisibleRegion,
   },
 };
 </script>
@@ -16,15 +16,20 @@ export default {
 <div id="idle-popup-background" @click="$emit('back')">
 </div>
 
-<div id="idle-popup">
-  <p>
-    가만히 계셨군요. <br />
-    화살표를 눌러서 <br />
-    다른 페이지를<br />
-    탐험해 보세요.
-  </p>
-</div>
-<BackButton @click="$emit('back')" />
+<VisibleRegion>
+  <div id="idle-popup">
+    <div id="idle-popup-title">
+      가만히 계시는군요!
+    </div>
+    <div id="idle-popup-text">
+      화살표를 터치해서 다른 골목으로 이동해보세요.<br>
+      골목들의 구석구석을 탐험해보세요.
+    </div>
+    <div id="idle-popup-next">
+      ✥ 여백 화면을 터치해 다시 뒤로 가기
+    </div>
+  </div>
+</VisibleRegion>
 </template>
 
 <style>
@@ -38,17 +43,37 @@ export default {
 }
 
 #idle-popup {
-  background-image: url("/img/mainStreet/idle.png");
-  width: 509px;
-  height: 911px;
+  /*background-image: url("/img/mainStreet/idle.png");*/
+  background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
-  top: calc(50% - 455px);
-  left: calc(50% - 255px);
+  left: 30px;
+  right: 30px;
+  display: flex;
+  height: 800px;
+  top: calc(50% - 400px);
+  flex-direction: column;
 }
 
-#idle-popup p {
-  margin-top: 100px;
+#idle-popup div {
   text-align: center;
-  font-size: 50px;
+  color: white;
 }
+
+#idle-popup-title {
+  padding-top: 170px;
+  font-size: 40px;
+}
+
+#idle-popup-text {
+  padding-top: 60px;
+  font-size: 25px;
+}
+
+#idle-popup-next {
+  padding-top: 250px;
+  font-size: 25px;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
 </style>

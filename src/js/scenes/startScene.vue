@@ -49,8 +49,6 @@ export default {
     setTimeout(() => {
       this.showIdle = true;
     }, 10 * 1000);
-
-    // start timeout
   },
   unmounted() {
   },
@@ -58,17 +56,23 @@ export default {
 </script>
 
 <template>
+
 <button class="left-enter-button interactive-button"
+  v-if="!showIdle"
   v-on:click="this.onClick('left')"
 />
 <button class="door-enter-button interactive-button"
+  v-if="!showIdle"
   v-on:click="this.onClick('door')"
 />
 <button class="info-enter-button interactive-button"
+  v-if="!showIdle"
   v-on:click="this.onClick('info')"
 />
+
 <visible-region>
   <button class="stair-enter-button interactive-button"
+      v-if="!showIdle"
       v-on:click="this.onClick('stair')"
     />
 </visible-region>
