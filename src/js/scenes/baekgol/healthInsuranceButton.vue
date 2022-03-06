@@ -15,7 +15,7 @@ export default {
   height: 970px;
   transform: scale(0.1);
   transform-origin: top left;
-  top: 700px;
-  left: 50px;
+  top: 1200px;
+  left: 270px;
 }
 </style>
