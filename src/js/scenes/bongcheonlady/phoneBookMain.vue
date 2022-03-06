@@ -28,16 +28,16 @@ export default {
   width: 1500px;
   height: 1150px;
   transform: scale(0.5);
-  transform-origin: top left;
-  top: 420px;
-  left: 60px;
+  transform-origin: center;
+  top: calc(50% - 1150px / 2);
+  left: calc(50% - 1500px / 2);
 }
 
 #phone-book-next-image {
-  background-image: url("/img/common/next.png");
-  width: 44px;
-  height: 63px;
+  background-image: url("/img/common/white_triangle_right.png");
+  width: 23px;
+  height: 105px;
   right: 20px;
-  top: 500px;
+  top: calc(50% - 105px / 2);
 }
 </style>

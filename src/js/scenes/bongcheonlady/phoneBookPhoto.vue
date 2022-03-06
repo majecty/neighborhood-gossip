@@ -27,18 +27,19 @@ export default {
   background-image: url("/img/bongcheonlady/phone_book_photo.JPG");
   width: 720px;
   height: 960px;
-  transform: scale(1);
-  transform-origin: top left;
-  top: 220px;
-  left: 0px;
+  transform: scale(0.7);
+  transform-origin: center;
+  top: calc(50% - 480px);
+  left: calc(50% - 360px);
 }
 
 #phone-book-prev-image {
-  background-image: url("/img/common/prev.png");
-  width: 44px;
-  height: 63px;
+  background-image: url("/img/common/white_triangle_left.png");
+  width: 52px;
+  height: 72px;
+  background-size: 26px 36px;
   left: 40px;
-  top: 700px;
+  top: calc(50% - 18px);
 }
 
 </style>
