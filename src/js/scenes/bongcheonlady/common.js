@@ -4,4 +4,5 @@ export const BongcheonladyState = {
   PhoneBook: "PhoneBook",
   PhoneBookPhoto: "PhoneBookPhoto",
   HandPrints: "HandPrints",
+  BabymealTin: "BabymealTin",
 };
