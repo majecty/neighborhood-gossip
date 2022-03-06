@@ -8,6 +8,9 @@ class Sound {
     this.koongkoongAmbience2 = new Howl({
       src: ["/sound/koongkoong_ambience2.mp3"],
     });
+    this.neighborhood = new Howl({
+      src: ["/sound/neighborhood.mp3"],
+    });
     this.transitionSound = new Howl({
       src: ["/sound/transition.mp3"],
     });
@@ -27,6 +30,9 @@ class Sound {
         console.log("play second sound");
         this.koongkoongAmbience2.fade(0, 1, 1000);
         this.koongkoongAmbience2.play();
+        break;
+      case "neighborhood":
+        this.neighborhood.play();
         break;
       case "diary":
         console.log("play diary sound");

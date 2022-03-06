@@ -8,6 +8,7 @@ import HealthInsuranceButton from "./baekgol/healthInsuranceButton.vue";
 import HealthInsuranceMain from "./baekgol/healthInsuranceMain.vue";
 import DaisoReceiptButton from "./baekgol/daisoReceiptButton.vue";
 import DaisoReceiptMain from "./baekgol/daisoReceiptMain.vue";
+import WindowButton from "./baekgol/window.vue";
 import BackButton from "./common/backButton.vue";
 import { BaekgolState } from "./baekgol/common";
 
@@ -24,6 +25,7 @@ export default {
     DaisoReceiptButton,
     DaisoReceiptMain,
     BackButton,
+    WindowButton,
   },
   created() {
     this.BaekgolState = BaekgolState;
@@ -67,6 +69,7 @@ export default {
 </script>
 
 <template>
+  <WindowButton v-if="state === BaekgolState.Idle" />
   <DiaryButton v-if="state === BaekgolState.Idle"
     @click="onClick(BaekgolState.Diary)"/>
   <HealthInsuranceButton v-if="state === BaekgolState.Idle"
