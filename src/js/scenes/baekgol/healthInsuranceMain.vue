@@ -12,11 +12,12 @@ export default {
 <style>
 #health-insurance {
   background-image: url("/img/baekgol/health_insurance.png");
-  width: 1091px;
-  height: 970px;
-  transform: scale(0.53);
+  width: 709px;
+  height: 630px;
+  transform: scale(0.8);
   transform-origin: center;
-  top: calc(50% - 495px);
-  left: calc(50% - 547px);
+  /*transform-origin: top left;*/
+  top: calc(50% - 630px / 2);
+  left: calc(50% - 709px / 2);
 }
 </style>
