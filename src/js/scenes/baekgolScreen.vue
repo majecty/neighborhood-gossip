@@ -42,8 +42,13 @@ export default {
     sound.stop("koongkoong2");
   },
   methods: {
-    onClick(state) {
-      this.state = state;
+    onClick(nextState) {
+      const prevState = this.state;
+      this.state = nextState;
+      if (prevState === BaekgolState.Idle && nextState === BaekgolState.Diary) {
+        sound.stop("koongkoong2");
+        sound.play("baekgolDiary");
+      }
     },
     back() {
       switch (this.state) {

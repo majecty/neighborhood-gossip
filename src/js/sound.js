@@ -13,6 +13,10 @@ class Sound {
     this.neighborhood = new Howl({
       src: ["/sound/neighborhood.mp3"],
     });
+    this.baekgolDiary = new Howl({
+      src: ["/sound/baekgol_diary.mp3"],
+      loop: true,
+    });
     this.transitionSound = new Howl({
       src: ["/sound/transition.mp3"],
     });
@@ -36,6 +40,10 @@ class Sound {
       case "neighborhood":
         this.neighborhood.play();
         break;
+      case "baekgolDiary":
+        this.baekgolDiary.fade(0, 1, 1000);
+        this.baekgolDiary.play();
+        break;
       case "diary":
         console.log("play diary sound");
         this.diarySound.play();
@@ -43,23 +51,26 @@ class Sound {
     }
   }
 
+  fadeoutAndStop(sound) {
+    sound.fade(1, 0, 1000);
+    setTimeout(() => {
+      sound.stop();
+    }, 1000);
+  }
+
   stop(name) {
     switch (name) {
       case "main":
         console.log("stop start sound");
-        this.mainSound.fade(1, 0, 1000);
-        setTimeout(() => {
-          this.mainSound.stop();
-        }, 1000);
-        this.transitionSound.play();
+        this.fadeoutAndStop(this.mainSound);
         break;
-      case "second":
+      case "koongkoong2":
         console.log("stop second sound");
-        this.koongkoongAmbience2.fade(1, 0, 1000);
-        setTimeout(() => {
-          this.koongkoongAmbience2.stop();
-        }, 1000);
-        this.transitionSound.play();
+        this.fadeoutAndStop(this.koongkoongAmbience2);
+        break;
+      case "baekgolDiary":
+        console.log("stop baekgolDiary sound");
+        this.fadeoutAndStop(this.baekgolDiary);
         break;
       case "diary":
         console.log("stop diary sound");
