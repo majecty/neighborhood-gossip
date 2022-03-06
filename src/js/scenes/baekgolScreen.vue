@@ -49,10 +49,16 @@ export default {
         sound.stop("koongkoong2");
         sound.play("baekgolDiary");
       }
+      if (prevState === BaekgolState.Diary && nextState === BaekgolState.Idle) {
+        sound.play("koongkoong2");
+        sound.stop("baekgolDiary");
+      }
     },
     back() {
       switch (this.state) {
         case BaekgolState.Diary:
+          sound.play("koongkoong2");
+          sound.stop("baekgolDiary");
           this.state = BaekgolState.Idle;
           break;
         case BaekgolState.DiaryText:
