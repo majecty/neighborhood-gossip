@@ -62,11 +62,13 @@ export default {
 #idle-popup-title {
   padding-top: 170px;
   font-size: 40px;
+  font-family: "Hahmlet-Bold";
 }
 
 #idle-popup-text {
   padding-top: 60px;
   font-size: 25px;
+  font-family: "Hahmlet-Light";
 }
 
 #idle-popup-next {
@@ -74,6 +76,7 @@ export default {
   font-size: 25px;
   text-decoration: underline;
   text-underline-position: under;
+  font-family: "NanumSquare";
 }
 
 </style>
