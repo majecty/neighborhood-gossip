@@ -10,12 +10,12 @@ export default {
 
 <style>
 #diary-button {
-  background-image: url("/img/baekgol/baekgol_diary.png");
-  width: 2987px;
-  height: 2128px;
-  transform: scale(0.05);
+  background-image: url("/img/baekgol/baekgol_diary_cover.png");
+  width: 709px;
+  height: 1021px;
+  transform: scale(0.15);
   transform-origin: top left;
-  top: 900px;
-  left: 550px;
+  top: 850px;
+  left: 500px;
 }
 </style>

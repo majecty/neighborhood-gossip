@@ -1,47 +1,35 @@
 <script>
 import { sampleText } from "../../misc/sampleText";
-import { sound } from "../../sound";
 import _ from "underscore";
 
 export default {
   name: "DiaryText",
   created() {
     this.sampleText = sampleText.replace(/(?:\r\n|\r|\n)/g, '<br />');
-    this.sound = sound;
-    this.playScrollSound = _.debounce((event) => {
-      const elem = event.target;
-      const top = elem.scrollTop;
-      const scrollHeight = elem.scrollHeight;
-      const clientHeight = elem.clientHeight;
-      const scrollRate = top / (scrollHeight - clientHeight);
-      this.sound.diarySound.volume(0.3 + scrollRate * 0.7);
-      this.sound.play("diary");
-    }, 100);
-  },
-  methods: {
-    handleScroll(event) {
-      this.playScrollSound(event);
-    },
   },
 };
 </script>
 
 <template>
 <div id="diary-text-container" class="absolute">
-  <div id="diary-scrollable" class="absolute"
-    v-on:scroll.native="handleScroll">
+  <div id="diary-scrollable" class="absolute">
     <p id="diary-text" v-html="sampleText">
     </p>
+  </div>
+  <div id="diary-upper-arrow">
+  </div>
+  <div id="diary-down-arrow">
   </div>
 </div>
 </template>
 
 <style>
+/*<style scoped>*/
 #diary-text-container {
   background: rgba(3, 3, 3, 0.7);
   left: 50px;
   right: 50px;
-  top: 70px;
+  top: 120px;
   bottom: 70px;
 }
 
@@ -67,5 +55,23 @@ export default {
 #diary-text-container #diary-text {
   font-size: 32px;
   color: white;
+}
+
+#diary-upper-arrow {
+  background-image: url("/img/common/white_triangle_up.png");
+  position: absolute;
+  width: 26px;
+  height: 36px;
+  top: 30px;
+  right: 20px;
+}
+
+#diary-down-arrow {
+  background-image: url("/img/common/white_triangle_down.png");
+  position: absolute;
+  width: 26px;
+  height: 36px;
+  bottom: 30px;
+  right: 20px;
 }
 </style>
