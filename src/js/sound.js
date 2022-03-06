@@ -2,8 +2,8 @@ import {Howl} from "howler";
 
 class Sound {
   constructor() {
-    this.startSound = new Howl({
-      src: ["/sound/start.mp3"],
+    this.mainSound = new Howl({
+      src: ["/sound/main.mp3"],
     });
     this.secondSound = new Howl({
       src: ["/sound/second.mp3"],
@@ -18,10 +18,10 @@ class Sound {
 
   play(name) {
     switch (name) {
-      case "start":
+      case "main":
         console.log("play start sound");
-        this.startSound.fade(0, 1, 1000);
-        this.startSound.play();
+        this.mainSound.fade(0, 1, 1000);
+        this.mainSound.play();
         break;
       case "second":
         console.log("play second sound");
@@ -37,11 +37,11 @@ class Sound {
 
   stop(name) {
     switch (name) {
-      case "start":
+      case "main":
         console.log("stop start sound");
-        this.startSound.fade(1, 0, 1000);
+        this.mainSound.fade(1, 0, 1000);
         setTimeout(() => {
-          this.startSound.stop();
+          this.mainSound.stop();
         }, 1000);
         this.transitionSound.play();
         break;

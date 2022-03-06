@@ -25,14 +25,17 @@ export default {
         case "left":
           this.screen.setScreen(SceneNames.BaekgolStreet);
           this.background.setBackground(this.screen.screen);
+          sound.stop("main");
           break;
         case "door":
           this.screen.setScreen(SceneNames.BongcheonladyStreet);
           this.background.setBackground(this.screen.screen);
+          sound.stop("main");
           break;
         case "stair":
           this.screen.setScreen(SceneNames.BomiStreet);
           this.background.setBackground(this.screen.screen);
+          sound.stop("main");
           break;
         case "info":
           this.screen.setScreen(SceneNames.InfoPage);
@@ -42,7 +45,7 @@ export default {
     },
   },
   mounted() {
-    sound.play("start");
+    sound.play("main");
     setTimeout(() => {
       this.showIdle = true;
     }, 10 * 1000);
@@ -50,7 +53,6 @@ export default {
     // start timeout
   },
   unmounted() {
-    sound.stop("start");
   },
 }
 </script>
