@@ -17,6 +17,10 @@ class Sound {
       src: ["/sound/baekgol_diary.mp3"],
       loop: true,
     });
+    this.lady = new Howl({
+      src: ["/sound/lady.mp3"],
+      loop: true,
+    });
     this.transitionSound = new Howl({
       src: ["/sound/transition.mp3"],
     });
@@ -43,6 +47,10 @@ class Sound {
       case "baekgolDiary":
         this.baekgolDiary.fade(0, 1, 1000);
         this.baekgolDiary.play();
+        break;
+      case "lady":
+        this.lady.fade(0, 1, 10000);
+        this.lady.play();
         break;
       case "diary":
         console.log("play diary sound");
@@ -71,6 +79,9 @@ class Sound {
       case "baekgolDiary":
         console.log("stop baekgolDiary sound");
         this.fadeoutAndStop(this.baekgolDiary);
+        break;
+      case "lady":
+        this.fadeoutAndStop(this.lady);
         break;
       case "diary":
         console.log("stop diary sound");

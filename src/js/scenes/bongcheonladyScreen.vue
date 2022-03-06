@@ -29,6 +29,7 @@ export default {
   },
   created() {
     this.BongcheonladyState = BongcheonladyState;
+    this.mounted = false;
   },
   data() {
     return {
@@ -36,10 +37,18 @@ export default {
     };
   },
   mounted() {
-    sound.play("second");
+    sound.play("koongkoong2");
+    setTimeout(() => {
+      if (this.mounted) {
+        sound.play("lady");
+      }
+    }, 3000);
+    this.mounted = true;
   },
   unmounted() {
-    sound.stop("second");
+    sound.stop("koongkoong2");
+    sound.stop("lady");
+    this.mounted = false;
   },
   methods: {
     onClick(state) {
