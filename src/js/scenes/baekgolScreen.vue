@@ -34,10 +34,10 @@ export default {
     };
   },
   mounted() {
-    sound.play("second");
+    sound.play("koongkoong2");
   },
   unmounted() {
-    sound.stop("second");
+    sound.stop("koongkoong2");
   },
   methods: {
     onClick(state) {

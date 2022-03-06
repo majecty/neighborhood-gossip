@@ -5,8 +5,8 @@ class Sound {
     this.mainSound = new Howl({
       src: ["/sound/main.mp3"],
     });
-    this.secondSound = new Howl({
-      src: ["/sound/second.mp3"],
+    this.koongkoongAmbience2 = new Howl({
+      src: ["/sound/koongkoong_ambience2.mp3"],
     });
     this.transitionSound = new Howl({
       src: ["/sound/transition.mp3"],
@@ -23,10 +23,10 @@ class Sound {
         this.mainSound.fade(0, 1, 1000);
         this.mainSound.play();
         break;
-      case "second":
+      case "koongkoong2":
         console.log("play second sound");
-        this.secondSound.fade(0, 1, 1000);
-        this.secondSound.play();
+        this.koongkoongAmbience2.fade(0, 1, 1000);
+        this.koongkoongAmbience2.play();
         break;
       case "diary":
         console.log("play diary sound");
@@ -47,9 +47,9 @@ class Sound {
         break;
       case "second":
         console.log("stop second sound");
-        this.secondSound.fade(1, 0, 1000);
+        this.koongkoongAmbience2.fade(1, 0, 1000);
         setTimeout(() => {
-          this.secondSound.stop();
+          this.koongkoongAmbience2.stop();
         }, 1000);
         this.transitionSound.play();
         break;
