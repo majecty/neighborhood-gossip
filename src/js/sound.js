@@ -4,9 +4,11 @@ class Sound {
   constructor() {
     this.mainSound = new Howl({
       src: ["/sound/main.mp3"],
+      loop: true,
     });
     this.koongkoongAmbience2 = new Howl({
       src: ["/sound/koongkoong_ambience2.mp3"],
+      loop: true,
     });
     this.neighborhood = new Howl({
       src: ["/sound/neighborhood.mp3"],
