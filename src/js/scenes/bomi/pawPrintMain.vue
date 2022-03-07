@@ -12,11 +12,13 @@ export default {
 <style>
 #paw-print {
   background-image: url("/img/bomi/paw_print_photo.jpg");
-  width: 3024px;
-  height: 4032px;
+  background-size: 1276px 1701px;
+  width: 1276px;
+  height: 1701px;
   transform: scale(0.4);
   transform-origin: top left;
-  top: 0px;
-  left: 0px;
+  transform-origin: center;
+  top: calc(50% - 825px);
+  left: calc(50% - 638px);
 }
 </style>
