@@ -6,6 +6,9 @@ export default {
 
 <template>
 <div id="bomi-log" class="absolute">
+  <div id="bomi-log-next">
+  ✥ 더 읽으려면 일기장을 터치하세요.
+  </div>
 </div>
 </template>
 
@@ -19,5 +22,16 @@ export default {
   transform-origin: center;
   top: calc(50% - 615px);
   left: calc(50% - 425px);
+}
+
+#bomi-log-next {
+  position: absolute;
+  font-size: 50px;
+  color: white;
+  text-decoration: underline;
+  text-underline-position: under;
+  text-align: center;
+  width: 100%;
+  bottom: -110px;
 }
 </style>
