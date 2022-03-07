@@ -1,11 +1,11 @@
 <script>
-import { sampleText } from "../../misc/sampleText";
+import { bomiDiaryText } from "../../misc/bomiDiaryText";
 import _ from "underscore";
 
 export default {
   name: "DiaryText",
   created() {
-    this.sampleText = sampleText.replace(/(?:\r\n|\r|\n)/g, '<br />');
+    this.bomiDiaryText = bomiDiaryText.replace(/(?:\r\n|\r|\n)/g, '<br />');
   },
 };
 </script>
@@ -13,7 +13,7 @@ export default {
 <template>
 <div id="diary-text-container" class="absolute">
   <div id="diary-scrollable" class="absolute">
-    <p id="diary-text" v-html="sampleText">
+    <p id="diary-text" v-html="bomiDiaryText">
     </p>
   </div>
   <div id="diary-upper-arrow">
