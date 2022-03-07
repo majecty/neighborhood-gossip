@@ -3,6 +3,7 @@ import PawPrintButton from "./bomi/pawPrintButton.vue";
 import PawPrintMain from "./bomi/pawPrintMain.vue";
 import BomiSpottedButton from "./bomi/bomiSpottedButton.vue";
 import BomiSpottedMain from "./bomi/bomiSpottedMain.vue";
+import BomiLogButton from "./bomi/bomiLogButton.vue";
 import { BomiState } from "./bomi/common";
 import BackButton from "./common/backButton.vue";
 import { sound } from "../sound";
@@ -15,6 +16,7 @@ export default {
     PawPrintMain,
     BomiSpottedButton,
     BomiSpottedMain,
+    BomiLogButton,
     BackButton,
   },
   created() {
@@ -52,6 +54,7 @@ export default {
 <template>
   <PawPrintButton v-if="state === BomiState.Idle" @click="state = BomiState.PawPrint"></PawPrintButton>
   <BomiSpottedButton v-if="state === BomiState.Idle" @click="state = BomiState.BomiSpotted"></BomiSpottedButton>
+  <BomiLogButton v-if="state === BomiState.Idle" @click="state = BomiState.BomiLog"></BomiLogButton>
 
   <PawPrintMain v-if="state === BomiState.PawPrint"></PawPrintMain>
   <BomiSpottedMain v-if="state === BomiState.BomiSpotted"></BomiSpottedMain>
