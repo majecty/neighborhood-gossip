@@ -34,13 +34,13 @@ export default {
     };
   },
   mounted() {
-    sound.play("second");
+    sound.play("koongkoong");
     if (this.urlQuery.bomiState) {
       this.state = parseBomiState(this.urlQuery.bomiState);
     }
   },
   unmounted() {
-    sound.stop("second");
+    sound.stop("koongkoong");
   },
   methods: {
     back() {

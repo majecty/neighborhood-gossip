@@ -6,6 +6,10 @@ class Sound {
       src: ["/sound/main.mp3"],
       loop: true,
     });
+    this.koongkoongAmbience = new Howl({
+      src: ["/sound/koongkoong_ambience.mp3"],
+      loop: true,
+    });
     this.koongkoongAmbience2 = new Howl({
       src: ["/sound/koongkoong_ambience2.mp3"],
       loop: true,
@@ -35,6 +39,10 @@ class Sound {
         console.log("play start sound");
         this.mainSound.fade(0, 1, 1000);
         this.mainSound.play();
+        break;
+      case "koongkoong":
+        this.koongkoongAmbience.fade(0, 1, 1000);
+        this.koongkoongAmbience.play();
         break;
       case "koongkoong2":
         console.log("play second sound");
@@ -71,6 +79,9 @@ class Sound {
       case "main":
         console.log("stop start sound");
         this.fadeoutAndStop(this.mainSound);
+        break;
+      case "koongkoong":
+        this.fadeoutAndStop(this.koongkoongAmbience);
         break;
       case "koongkoong2":
         console.log("stop second sound");
