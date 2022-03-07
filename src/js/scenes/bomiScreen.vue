@@ -43,6 +43,16 @@ export default {
     sound.stop("koongkoong");
   },
   methods: {
+    onClick(nextState) {
+      const prevState = this.state;
+      this.state = nextState;
+
+      if (prevState === BomiState.Idle && nextState === BomiState.BomiLog) {
+        sound.play("diary");
+      } else if (prevState === BomiState.BomiLog && nextState === BomiState.BomiLogText) {
+        sound.play("diary");
+      }
+    },
     back() {
       switch(this.state) {
         case BomiState.PawPrint:
@@ -67,14 +77,14 @@ export default {
 </script>
 
 <template>
-  <PawPrintButton v-if="state === BomiState.Idle" @click="state = BomiState.PawPrint"></PawPrintButton>
-  <BomiSpottedButton v-if="state === BomiState.Idle" @click="state = BomiState.BomiSpotted"></BomiSpottedButton>
-  <BomiLogButton v-if="state === BomiState.Idle" @click="state = BomiState.BomiLog"></BomiLogButton>
+  <PawPrintButton v-if="state === BomiState.Idle" @click="onClick(BomiState.PawPrint)"></PawPrintButton>
+  <BomiSpottedButton v-if="state === BomiState.Idle" @click="onClick(BomiState.BomiSpotted)"></BomiSpottedButton>
+  <BomiLogButton v-if="state === BomiState.Idle" @click="onClick(BomiState.BomiLog)"></BomiLogButton>
 
   <PawPrintMain v-if="state === BomiState.PawPrint"></PawPrintMain>
   <BomiSpottedMain v-if="state === BomiState.BomiSpotted"></BomiSpottedMain>
   <BomiLogMain v-if="state === BomiState.BomiLog"
-    @click="state = BomiState.BomiLogText" ></BomiLogMain>
+    @click="onClick(BomiState.BomiLogText)" ></BomiLogMain>
 
   <BomiLogText v-if="state === BomiState.BomiLogText"></BomiLogText>
 
