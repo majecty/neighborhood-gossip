@@ -5,9 +5,11 @@ import BomiSpottedButton from "./bomi/bomiSpottedButton.vue";
 import BomiSpottedMain from "./bomi/bomiSpottedMain.vue";
 import BomiLogButton from "./bomi/bomiLogButton.vue";
 import BomiLogMain from "./bomi/bomiLogMain.vue";
-import { BomiState } from "./bomi/common";
+import BomiLogText from "./bomi/bomiLogText.vue";
+import { BomiState, parseBomiState } from "./bomi/common";
 import BackButton from "./common/backButton.vue";
 import { sound } from "../sound";
+import { urlQuery } from "../data/urlQuery";
 
 export default {
   name: "BomiScreen",
@@ -19,6 +21,7 @@ export default {
     BomiSpottedMain,
     BomiLogButton,
     BomiLogMain,
+    BomiLogText,
     BackButton,
   },
   created() {
@@ -26,11 +29,15 @@ export default {
   },
   data() {
     return {
-      state: BomiState.Idle
+      state: BomiState.Idle,
+      urlQuery,
     };
   },
   mounted() {
     sound.play("second");
+    if (this.urlQuery.bomiState) {
+      this.state = parseBomiState(this.urlQuery.bomiState);
+    }
   },
   unmounted() {
     sound.stop("second");
@@ -43,6 +50,12 @@ export default {
           break;
         case BomiState.BomiSpotted:
           this.state = BomiState.Idle;
+          break;
+        case BomiState.BomiLog:
+          this.state = BomiState.Idle;
+          break;
+        case BomiState.BomiLogText:
+          this.state = BomiState.BomiLog;
           break;
         case BomiState.Idle:
           this.$emit("back");
@@ -60,7 +73,10 @@ export default {
 
   <PawPrintMain v-if="state === BomiState.PawPrint"></PawPrintMain>
   <BomiSpottedMain v-if="state === BomiState.BomiSpotted"></BomiSpottedMain>
-  <BomiLogMain v-if="state === BomiState.BomiLog"></BomiLogMain>
+  <BomiLogMain v-if="state === BomiState.BomiLog"
+    @click="state = BomiState.BomiLogText" ></BomiLogMain>
+
+  <BomiLogText v-if="state === BomiState.BomiLogText"></BomiLogText>
 
   <BackButton @back="back" />
 </template>

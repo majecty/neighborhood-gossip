@@ -1,6 +1,5 @@
 <script>
 import { baekgolDiaryText } from "../../misc/baekgolDiaryText";
-import _ from "underscore";
 
 export default {
   name: "DiaryText",
