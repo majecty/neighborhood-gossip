@@ -29,9 +29,10 @@ export default {
   --ratio: 0.7;
 
   background-image: url("/img/bongcheonlady/phone_book_photo.JPG");
-  aspect-ratio: calc(var(--width) / var(--height));
+  /*aspect-ratio: calc(var(--width) / var(--height));*/
   background-size: 100%;
   width: calc(1px * var(--width) * var(--ratio));
+  height: calc(1px * var(--height) * var(--ratio));
   top: calc(50% - 1px * var(--height) * var(--ratio) / 2);
   left: calc(50% - 1px * var(--width) * var(--ratio) / 2);
 }

@@ -42,8 +42,9 @@ export default {
   --height: 2148;
   --ratio: 0.25;
   background-image: url("/img/baekgol/baekgol_diary_inside.png");
-  aspect-ratio: calc(var(--width) / var(--height));
+  /*aspect-ratio: calc(var(--width) / var(--height));*/
   width: calc(1px * var(--width) * var(--ratio));
+  height: calc(1px * var(--height) * var(--ratio));
   background-size: 100%;
   top: calc(50% - 1px * (var(--height) * var(--ratio)) / 2);
   left: calc(50% - 1px * (var(--width) * var(--ratio)) / 2);

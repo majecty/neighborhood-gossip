@@ -45,8 +45,8 @@ export default {
   --width: 510;
   --height: 721;
   --ratio: 1;
-  aspect-ratio: var(--width) / var(--height);
   width: calc(1px * var(--width) * var(--ratio));
+  height: calc(1px * var(--height) * var(--ratio));
   background-size: 100%;
   left: calc(50% - calc(1px * var(--width) * var(--ratio)) / 2);
 

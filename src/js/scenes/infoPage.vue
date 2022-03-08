@@ -62,10 +62,14 @@ export default {
 } 
 
 #info-page-poster {
+  --width: 2126;
+  --height: 3005;
   background-image: url("/img/common/poster.png");
-  aspect-ratio: 2126/3005;
+  /*aspect-ratio: 2126/3005;*/
   flex-shrink: 0;
   width: 90%;
+  height: auto;
+  height: 1000px;
   margin-left: 5%;
   background-size: 100%;
   margin-bottom: 100px;
