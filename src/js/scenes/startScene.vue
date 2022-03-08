@@ -65,7 +65,7 @@ export default {
     }, 3000);
     setTimeout(() => {
       this.showIdle = true;
-    }, 30 * 1000);
+    }, 20 * 1000);
   },
   unmounted() {
     this.mounted = false;
