@@ -20,9 +20,9 @@ export default {
     </div>
     <div id="diary-text" >
 
-      1인칭을 3인칭으로<br>
-      바꿔서 일기를 쓰면 아무리<br>
-      하찮은 일이라도 퍽<br>
+      1인칭을 3인칭으로
+      바꿔서 일기를 쓰면 아무리
+      하찮은 일이라도 퍽
       낭만적으로 느껴진다.
     </div>
   </div>
@@ -33,27 +33,28 @@ export default {
 
 </template>
 
-<style scoped>
+<style>
 /*<style>*/
 #diary {
+  --width: 2795;
+  --height: 2148;
+  --ratio: 0.25;
   background-image: url("/img/baekgol/baekgol_diary_inside.png");
-  width: calc(2795px * 0.2);
-  height: calc(2148px * 0.2);
-  background-size: calc(2795px * 0.2) calc(2148px * 0.2);
-  /*transform: scale(0.2);*/
-  transform-origin: center;
-  top: calc(50% - 2148px / 2 * 0.2);
-  left: calc(50% - 2795px / 2 * 0.2);
-  /*top: 500px;*/
-  /*left: 60px;*/
+  aspect-ratio: calc(var(--width) / var(--height));
+  width: calc(1px * var(--width) * var(--ratio));
+  background-size: 100%;
+  top: calc(50% - 1px * (var(--height) * var(--ratio)) / 2);
+  left: calc(50% - 1px * (var(--width) * var(--ratio)) / 2);
+  font-size: 18px;
 }
 
 #diary-page {
   /*background-color: rgba(255, 0, 0, 0.5);*/
   position: absolute;
-  top: 50px;
-  left: 300px;
-  width: 200px;
+  top: 90px;
+  /*left: 300px;*/
+  right: 50px;
+  width: 290px;
   height: 300px;
   position: flex;
   flex-direction: column;
@@ -67,6 +68,7 @@ export default {
   padding-top: 40px;
   text-decoration: underline;
   text-underline-position: under;
+  text-decoration-thickness: 4px;
   /*text-decoration-color: #ff0000;*/
 }
 
