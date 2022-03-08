@@ -5,7 +5,7 @@ import { sound } from "../../sound";
 export default {
   name: "DiaryText",
   created() {
-    this.baekgolDiaryText = baekgolDiaryText.replace(/(?:\r\n|\r|\n)/g, '<br />');
+    this.baekgolDiaryText = baekgolDiaryText;
   },
   mounted() {
     sound.play("diary");
@@ -34,6 +34,7 @@ export default {
   right: 50px;
   top: 120px;
   bottom: 70px;
+  white-space: pre-wrap;
 }
 
 #diary-text-container #diary-scrollable {
@@ -56,7 +57,7 @@ export default {
 } 
 
 #diary-text-container #diary-text {
-  font-size: 32px;
+  font-size: 28px;
   color: white;
 }
 
@@ -76,5 +77,10 @@ export default {
   height: 36px;
   bottom: 30px;
   right: 20px;
+}
+
+.date {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
 }
 </style>
