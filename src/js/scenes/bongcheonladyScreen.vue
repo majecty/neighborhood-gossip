@@ -8,6 +8,7 @@ import HandPrintsButton from "./bongcheonlady/handPrintsButton.vue";
 import HandPrintsMain from "./bongcheonlady/handPrintsMain.vue";
 import BabymealTinButton from "./bongcheonlady/babymealTinButton.vue";
 import BabymealTinMain from "./bongcheonlady/babymealTinMain.vue";
+import BabymealTinInner from "./bongcheonlady/babymealTinInner.vue";
 import BackButton from "./common/backButton.vue";
 import { BongcheonladyState } from "./bongcheonlady/common";
 import { sound } from "../sound";
@@ -26,6 +27,7 @@ export default {
     HandPrintsMain,
     BabymealTinButton,
     BabymealTinMain,
+    BabymealTinInner,
     BackButton,
   },
   created() {
@@ -59,6 +61,13 @@ export default {
     onClick(state) {
       this.state = state;
     },
+    next() {
+      switch (this.state) {
+        case BongcheonladyState.BabymealTin:
+          this.state = BongcheonladyState.BabymealTinInner;
+          break;
+      }
+    },
     back() {
       switch (this.state) {
         case BongcheonladyState.NameTag:
@@ -75,6 +84,9 @@ export default {
           break;
         case BongcheonladyState.BabymealTin:
           this.state = BongcheonladyState.Idle;
+          break;
+        case BongcheonladyState.BabymealTinInner:
+          this.state = BongcheonladyState.BabymealTin;
           break;
         default:
           this.$emit("back");
@@ -105,7 +117,8 @@ export default {
   <PhoneBookPhoto v-if="state === BongcheonladyState.PhoneBookPhoto"
     @click="onClick(BongcheonladyState.PhoneBook)" />
   <HandPrintsMain v-if="state === BongcheonladyState.HandPrints" />
-  <BabymealTinMain v-if="state === BongcheonladyState.BabymealTin" />
+  <BabymealTinMain v-if="state === BongcheonladyState.BabymealTin" @next="next" />
+  <BabymealTinInner v-if="state === BongcheonladyState.BabymealTinInner" @back="back" />
 
   <BackButton @back="back"/>
 </template>
