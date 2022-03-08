@@ -21,6 +21,10 @@ class Sound {
       src: ["/sound/baekgol_diary.mp3"],
       loop: true,
     });
+    this.bomiLog = new Howl({
+      src: ["/sound/Bomi_diary.mp3"],
+      loop: true,
+    });
     this.lady = new Howl({
       src: ["/sound/lady.mp3"],
       loop: true,
@@ -53,8 +57,14 @@ class Sound {
         this.neighborhood.play();
         break;
       case "baekgolDiary":
+        console.log("play baekgolDiary sound");
         this.baekgolDiary.fade(0, 1, 1000);
         this.baekgolDiary.play();
+        break;
+      case "bomiLog":
+        console.log("play bomiLog sound");
+        this.bomiLog.fade(0, 1, 1000);
+        this.bomiLog.play();
         break;
       case "lady":
         this.lady.fade(0, 1, 10000);
@@ -90,6 +100,10 @@ class Sound {
       case "baekgolDiary":
         console.log("stop baekgolDiary sound");
         this.fadeoutAndStop(this.baekgolDiary);
+        break;
+      case "bomiLog":
+        console.log("stop bomiLog sound");
+        this.fadeoutAndStop(this.bomiLog);
         break;
       case "lady":
         this.fadeoutAndStop(this.lady);

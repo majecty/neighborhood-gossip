@@ -41,6 +41,7 @@ export default {
   },
   unmounted() {
     sound.stop("koongkoong");
+    sound.stop("bomiLog");
   },
   methods: {
     onClick(nextState) {
@@ -49,8 +50,13 @@ export default {
 
       if (prevState === BomiState.Idle && nextState === BomiState.BomiLog) {
         sound.play("diary");
+        sound.stop("koongkoong");
+        sound.play("bomiLog");
       } else if (prevState === BomiState.BomiLog && nextState === BomiState.BomiLogText) {
         sound.play("diary");
+      } else if (prevState === BomiState.BomiLog && nextState === BomiState.Idle) {
+        sound.stop("bomiLog");
+        sound.play("koongkoong");
       }
     },
     back() {
