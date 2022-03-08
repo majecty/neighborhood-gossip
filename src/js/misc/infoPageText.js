@@ -9,17 +9,17 @@ Kyungjoo Lee
 @kionrhie
 @jjuppon_ii__on__nocburn_alley
 kionrhie@gmail.com 
-- 
+-
 2022. 03. 09 - 2022. 03. 27 
 서울시 서초구 방배로 42길 31-3 지하1층
 월, 화 휴관 / 1:00 pm - 7:00 pm 
 
-작가: 이경주  
+작가: 이경주
 글: 정내희 
-사운드: 오정웅 [linktr.ee/ijskra] 
+사운드: 오정웅 [linktr.ee/ijskra]
 웹제작: 박주형 [twitter/majecty] 
 디자인: 정소영 @shegochong
-촬영: 이해란 @haeran____ 
+촬영: 이해란 @haeran____
 
 Special thanks to: 
 흐루츠후라이랩(@fruitfrieslab), 김대유(@daeu.k) 
