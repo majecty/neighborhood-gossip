@@ -5,11 +5,13 @@ Kyungjoo Lee
 ( Kion Rhie ) 
 </span>
 
+<span>
 -
-@kionrhie
-@jjuppon_ii__on__nocburn_alley
+<a href="https://www.instagram.com/kionrhie/" target="_blank">@kionrhie</a>
+<a href="https://www.instagram.com/jjuppon_ii__on__nocburn_alley/" target="_blank">@jjuppon_ii__on__nocburn_alley</a>
 kionrhie@gmail.com 
 -
+</span>
 2022. 03. 09 - 2022. 03. 27 
 서울시 서초구 방배로 42길 31-3 지하1층
 월, 화 휴관 / 1:00 pm - 7:00 pm 
