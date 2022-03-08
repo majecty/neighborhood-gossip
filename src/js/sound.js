@@ -42,7 +42,7 @@ class Sound {
       case "main":
         console.log("play start sound");
         if (!this.mainSound.playing()) {
-          this.mainSound.fade(0, 1, 1000);
+          //this.mainSound.fade(0, 1, 1000);
           this.mainSound.play();
         }
         break;
