@@ -37,6 +37,7 @@ export default {
   top: 120px;
   bottom: 70px;
   white-space: pre-wrap;
+  font-family: "NanumSquare";
 }
 
 #diary-text-container #diary-scrollable {
@@ -56,7 +57,7 @@ export default {
 #diary-text-container #diary-scrollable {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
-} 
+}
 
 #diary-text-container #diary-text {
   font-size: 28px;
