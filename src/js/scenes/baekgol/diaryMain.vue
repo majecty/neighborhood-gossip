@@ -49,7 +49,6 @@ export default {
   top: calc(50% - 1px * (var(--height) * var(--ratio)) / 2);
   left: calc(50% - 1px * (var(--width) * var(--ratio)) / 2);
   font-size: 24px;
-  font-family: "Bohyun";
 }
 
 #diary-page {
@@ -62,6 +61,7 @@ export default {
   height: 300px;
   position: flex;
   flex-direction: column;
+  font-family: "Bohyun";
 }
 
 #diary-title {
@@ -73,6 +73,7 @@ export default {
   text-decoration: underline;
   text-underline-position: under;
   text-decoration-thickness: 4px;
+  font-family: "NanumSquare";
   /*text-decoration-color: #ff0000;*/
 }
 
