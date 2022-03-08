@@ -13,22 +13,22 @@ export default {
 </script>
 
 <template>
-<div id="diary" class="absolute">
-  <div id="diary-page">
-    <div id="diary-title">
+<div id="baekgol-diary" class="absolute">
+  <div id="baekgol-diary-page">
+    <div id="baekgol-diary-title">
   【 행복한 나날들을 위한 낭만 일기 】
     </div>
-    <div id="diary-text-day">
+    <div id="baekgol-diary-text-day">
     2014. 11. 07
     </div>
-    <div id="diary-text" >
+    <div id="baekgol-diary-text" >
       1인칭을 3인칭으로
       바꿔서 일기를 쓰면 아무리
       하찮은 일이라도 퍽
       낭만적으로 느껴진다.
     </div>
   </div>
-  <div id="diary-next">
+  <div id="baekgol-diary-next">
   ✥ 더 읽으려면 일기장을 터치하세요.
   </div>
 </div>
@@ -37,7 +37,7 @@ export default {
 
 <style>
 /*<style>*/
-#diary {
+#baekgol-diary {
   --width: 2795;
   --height: 2148;
   --ratio: 0.25;
@@ -51,7 +51,7 @@ export default {
   font-size: 24px;
 }
 
-#diary-page {
+#baekgol-diary-page {
   /*background-color: rgba(255, 0, 0, 0.5);*/
   position: absolute;
   top: 90px;
@@ -64,25 +64,25 @@ export default {
   font-family: "Bohyun";
 }
 
-#diary-title {
+#baekgol-diary-title {
   padding-top: 30px;
 }
 
-#diary-text-day {
+#baekgol-diary-text-day {
   padding-top: 40px;
   text-decoration: underline;
   text-underline-position: under;
-  text-decoration-thickness: 4px;
-  font-family: "NanumSquare";
+  text-decoration-thickness: 2px;
+  /*font-family: "NanumSquare";*/
   /*text-decoration-color: #ff0000;*/
 }
 
 
-#diary-text {
+#baekgol-diary-text {
   padding-top: 20px;
 }
 
-#diary-next {
+#baekgol-diary-next {
   position: absolute;
   width: 50%;
   right: 30px;
