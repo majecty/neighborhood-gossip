@@ -72,7 +72,7 @@ export default {
   font-family: "NanumSquare";
   width: 100%;
   bottom: 50px;
-  font-size: 30px;
+  font-size: 25px;
   color: white;
   text-align: center;
 };
