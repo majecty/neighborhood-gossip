@@ -24,13 +24,16 @@ export default {
 
 <style>
 #phone-book-photo {
+  --width: 720;
+  --height: 960;
+  --ratio: 0.7;
+
   background-image: url("/img/bongcheonlady/phone_book_photo.JPG");
-  width: 720px;
-  height: 960px;
-  transform: scale(0.7);
-  transform-origin: center;
-  top: calc(50% - 480px);
-  left: calc(50% - 360px);
+  aspect-ratio: calc(var(--width) / var(--height));
+  background-size: 100%;
+  width: calc(1px * var(--width) * var(--ratio));
+  top: calc(50% - 1px * var(--height) * var(--ratio) / 2);
+  left: calc(50% - 1px * var(--width) * var(--ratio) / 2);
 }
 
 #phone-book-prev-image {
