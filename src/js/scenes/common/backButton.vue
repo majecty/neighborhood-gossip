@@ -26,6 +26,6 @@ export default {
   transform-origin: top left;
   top: 50px;
   left: 50px;
-};
+}
 
 </style>
