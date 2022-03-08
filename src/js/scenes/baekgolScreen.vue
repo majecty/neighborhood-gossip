@@ -11,6 +11,7 @@ import DaisoReceiptMain from "./baekgol/daisoReceiptMain.vue";
 import WindowButton from "./baekgol/window.vue";
 import BackButton from "./common/backButton.vue";
 import { BaekgolState } from "./baekgol/common";
+import { urlQuery } from "../data/urlQuery";
 
 export default {
   name: "BaekgolScreen",
@@ -32,11 +33,15 @@ export default {
   },
   data() {
     return {
-      state: BaekgolState.Idle
+      state: BaekgolState.Idle,
+      urlQuery,
     };
   },
   mounted() {
     sound.play("koongkoong2");
+    if (this.urlQuery.baekgolState) {
+      this.state = this.urlQuery.baekgolState;
+    }
   },
   unmounted() {
     sound.stop("koongkoong2");
