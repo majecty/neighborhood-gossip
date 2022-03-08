@@ -1,11 +1,15 @@
 <script>
 import { baekgolDiaryText } from "../../misc/baekgolDiaryText";
+import { sound } from "../../sound";
 
 export default {
   name: "DiaryText",
   created() {
     this.baekgolDiaryText = baekgolDiaryText.replace(/(?:\r\n|\r|\n)/g, '<br />');
   },
+  mounted() {
+    sound.play("diary");
+  }
 };
 </script>
 
