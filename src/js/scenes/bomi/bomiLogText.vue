@@ -35,7 +35,7 @@ export default {
   right: 50px;
   top: 120px;
   bottom: 70px;
-  font-family: "NanumSquare", sans-serif;
+  font-family: "NanumSquare";
 }
 
 #bomi-log-text-container #bomi-log-scrollable {
@@ -58,7 +58,7 @@ export default {
 } 
 
 #bomi-log-text-container #bomi-log-text {
-  font-size: 32px;
+  font-size: 26px;
   color: white;
 }
 

@@ -57,7 +57,7 @@ export default {
 }
 
 #diary-text-container #diary-text {
-  font-size: 28px;
+  font-size: 26px;
   color: white;
 }
 
