@@ -14,6 +14,9 @@ export default {
   },
   created() {
     this.mounted = false;
+    // info 페이지 갈 때에는 unmount되어도 sound가 멈추지 않는다.
+    // 더 잘 만들 수 있지만 일단은 이렇게 해둠.
+    this.movingToInfo = false;
   },
   data() {
     return {
@@ -43,12 +46,14 @@ export default {
         case "info":
           this.screen.setScreen(SceneNames.InfoPage);
           this.background.setBackground(this.screen.screen);
+          this.movingToInfo = true;
           break;
       }
     },
   },
   mounted() {
     this.mounted = true;
+    this.movingToInfo = false;
     setTimeout(() => {
       if (this.mounted) {
         sound.play("main");
@@ -60,6 +65,9 @@ export default {
   },
   unmounted() {
     this.mounted = false;
+    if (!this.movingToInfo) {
+      sound.stop("main");
+    }
   },
 }
 </script>

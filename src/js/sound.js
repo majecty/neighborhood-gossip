@@ -41,20 +41,29 @@ class Sound {
     switch (name) {
       case "main":
         console.log("play start sound");
-        this.mainSound.fade(0, 1, 1000);
-        this.mainSound.play();
+        if (!this.mainSound.playing()) {
+          this.mainSound.fade(0, 1, 1000);
+          console.log(this.mainSound);
+          this.mainSound.play();
+        }
         break;
       case "koongkoong":
-        this.koongkoongAmbience.fade(0, 1, 1000);
-        this.koongkoongAmbience.play();
+        if (!this.kookkoongAmbience.playing()) {
+          this.koongkoongAmbience.fade(0, 1, 1000);
+          this.koongkoongAmbience.play();
+        }
         break;
       case "koongkoong2":
-        console.log("play second sound");
-        this.koongkoongAmbience2.fade(0, 1, 1000);
-        this.koongkoongAmbience2.play();
+        if (!this.koongkoongAmbience2.playing()) {
+          this.koongkoongAmbience2.fade(0, 1, 1000);
+          this.koongkoongAmbience2.play();
+        }
         break;
       case "neighborhood":
-        this.neighborhood.play();
+        if (!this.neighborhood.playing()) {
+          this.neighborhood.fade(0, 1, 1000);
+          this.neighborhood.play();
+        }
         break;
       case "baekgolDiary":
         console.log("play baekgolDiary sound");
