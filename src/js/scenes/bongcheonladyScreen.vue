@@ -11,6 +11,7 @@ import BabymealTinMain from "./bongcheonlady/babymealTinMain.vue";
 import BackButton from "./common/backButton.vue";
 import { BongcheonladyState } from "./bongcheonlady/common";
 import { sound } from "../sound";
+import { urlQuery } from "../data/urlQuery";
 
 export default {
   name: "BongcheonladyStreet",
@@ -34,9 +35,13 @@ export default {
   data() {
     return {
       state: BongcheonladyState.Idle, 
+      urlQuery,
     };
   },
   mounted() {
+    if (this.urlQuery.bongcheonState != null) {
+      this.state = this.urlQuery.bongcheonState;
+    }
     sound.play("koongkoong2");
     setTimeout(() => {
       if (this.mounted) {

@@ -5,6 +5,7 @@ export const urlQuery = reactive({
   screen: null,
   bomiState: null,
   baekgolState: null,
+  bongcheonState: null,
   initialize() {
     console.log("url query initialize");
     // this.data.get();
@@ -13,5 +14,6 @@ export const urlQuery = reactive({
     this.screen = this.data.get("screen");
     this.bomiState = this.data.get("bomi");
     this.baekgolState = this.data.get("baekgol");
+    this.bongcheonState = this.data.get("bongcheon");
   }
 });
