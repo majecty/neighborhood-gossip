@@ -49,9 +49,8 @@ export default {
   height: calc(1px * var(--height) * var(--ratio));
   background-size: 100%;
   left: calc(50% - calc(1px * var(--width) * var(--ratio)) / 2);
-
-  bottom: 210px;
 	background-image: url("/img/common/poster.png");
+  top: calc(50% - calc(1px * var(--height) * var(--ratio)) / 2 - 100px);
 }
 
 #prolog-screen-black-screen {
@@ -66,16 +65,16 @@ export default {
   height: 122px;
   transform: scale(0.4);
   transform-origin: center;
-  bottom: 100px;
   left: calc(50% - (311px / 2));
+  top: calc(50% + 250px);
 }
 
 #prolog-screen-description {
   font-family: "NanumSquare";
   width: 100%;
-  bottom: 50px;
   font-size: 25px;
   color: white;
   text-align: center;
+  top: calc(50% + 370px);
 }
 </style>
