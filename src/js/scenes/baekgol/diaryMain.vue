@@ -47,7 +47,8 @@ export default {
   background-size: 100%;
   top: calc(50% - 1px * (var(--height) * var(--ratio)) / 2);
   left: calc(50% - 1px * (var(--width) * var(--ratio)) / 2);
-  font-size: 18px;
+  font-size: 24px;
+  font-family: "Bohyun";
 }
 
 #diary-page {

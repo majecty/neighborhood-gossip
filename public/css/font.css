@@ -14,3 +14,11 @@
 }
 
 @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+
+@font-face {
+    font-family: 'Bohyun';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105@1.1/Bohyun.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
