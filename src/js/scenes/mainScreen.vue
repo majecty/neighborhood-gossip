@@ -9,6 +9,7 @@ import BongcheonladyScreen from "./bongcheonladyScreen.vue";
 import BomiScreen from "./bomiScreen.vue";
 import InfoPage from "./infoPage.vue";
 import {SceneNames} from "./common";
+import { sound } from "../sound";
 
 export default {
   name: "MainScreen",
@@ -31,9 +32,12 @@ export default {
     }
   },
   methods: {
-    back() {
+    back(scene) {
       this.screen.setScreen(SceneNames.MainStreet);
       this.background.setBackground(SceneNames.MainStreet);
+      if (scene !== 'info') {
+        sound.play("transition");
+      }
     },
   },
 }
@@ -46,11 +50,11 @@ export default {
     class="w-full h-full"
   /-->
   <BaekgolScreen v-if="screen.screen === SceneNames.BaekgolStreet"
-    @back="back" />
+    @back="back('baekgol')" />
   <BongcheonladyScreen v-if="screen.screen === SceneNames.BongcheonladyStreet"
-    @back="back" />
+    @back="back('bongcheon')" />
   <BomiScreen v-if="screen.screen === SceneNames.BomiStreet"
-    @back="back" />
+    @back="back('bomi')" />
   <InfoPage v-if="screen.screen === SceneNames.InfoPage"
-    @back="back" />
+    @back="back('info')" />
 </template>

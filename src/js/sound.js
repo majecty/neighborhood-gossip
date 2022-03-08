@@ -82,6 +82,9 @@ class Sound {
         console.log("play diary sound");
         this.diarySound.play();
         break;
+      case "transition":
+        this.transitionSound.play();
+        break;
     }
   }
 

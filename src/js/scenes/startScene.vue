@@ -32,16 +32,19 @@ export default {
           this.screen.setScreen(SceneNames.BaekgolStreet);
           this.background.setBackground(this.screen.screen);
           sound.stop("main");
+          sound.play("transition");
           break;
         case "door":
           this.screen.setScreen(SceneNames.BongcheonladyStreet);
           this.background.setBackground(this.screen.screen);
+          sound.play("transition");
           sound.stop("main");
           break;
         case "stair":
           this.screen.setScreen(SceneNames.BomiStreet);
           this.background.setBackground(this.screen.screen);
           sound.stop("main");
+          sound.play("transition");
           break;
         case "info":
           this.screen.setScreen(SceneNames.InfoPage);
