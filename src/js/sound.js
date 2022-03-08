@@ -43,12 +43,11 @@ class Sound {
         console.log("play start sound");
         if (!this.mainSound.playing()) {
           this.mainSound.fade(0, 1, 1000);
-          console.log(this.mainSound);
           this.mainSound.play();
         }
         break;
       case "koongkoong":
-        if (!this.kookkoongAmbience.playing()) {
+        if (!this.koongkoongAmbience.playing()) {
           this.koongkoongAmbience.fade(0, 1, 1000);
           this.koongkoongAmbience.play();
         }
