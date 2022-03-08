@@ -42,13 +42,15 @@ export default {
 
 <style>
 #prolog-screen-poster-image {
-  width: 2126px;
-	height: 3005px;
-  top: calc(50%	- 3005px / 2 - 100px);
-	left: calc(50% - 2126px / 2);
-  transform-origin: center;
-  bottom: 250px;
-  transform: scale(0.23);
+  --width: 510;
+  --height: 721;
+  --ratio: 1;
+  aspect-ratio: var(--width) / var(--height);
+  width: calc(1px * var(--width) * var(--ratio));
+  background-size: 100%;
+  left: calc(50% - calc(1px * var(--width) * var(--ratio)) / 2);
+
+  bottom: 210px;
 	background-image: url("/img/common/poster.png");
 }
 
