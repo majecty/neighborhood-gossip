@@ -19,7 +19,6 @@ export default {
     2014. 11. 07
     </div>
     <div id="diary-text" >
-
       1인칭을 3인칭으로
       바꿔서 일기를 쓰면 아무리
       하찮은 일이라도 퍽
@@ -79,9 +78,9 @@ export default {
 
 #diary-next {
   position: absolute;
-  top: calc(50% + 210px);
-  left: 250px;
   width: 50%;
+  right: 30px;
+  bottom: -10px;
   text-align: center;
   color: white;
   text-decoration: underline;
