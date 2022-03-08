@@ -12,6 +12,9 @@ export default {
     VisibleRegion,
     IdlePopup,
   },
+  created() {
+    this.mounted = false;
+  },
   data() {
     return {
       screen,
@@ -45,12 +48,18 @@ export default {
     },
   },
   mounted() {
-    sound.play("main");
+    this.mounted = true;
+    setTimeout(() => {
+      if (this.mounted) {
+        sound.play("main");
+      }
+    }, 3000);
     setTimeout(() => {
       this.showIdle = true;
     }, 10 * 1000);
   },
   unmounted() {
+    this.mounted = false;
   },
 }
 </script>
