@@ -6,6 +6,9 @@ export default {
   created() {
     this.sound = sound;
   },
+  mounted() {
+    this.sound.play("diary");
+  },
 };
 </script>
 

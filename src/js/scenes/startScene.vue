@@ -54,6 +54,7 @@ export default {
   mounted() {
     this.mounted = true;
     this.movingToInfo = false;
+    /*this.showIdle = true;*/
     setTimeout(() => {
       if (this.mounted) {
         sound.play("main");

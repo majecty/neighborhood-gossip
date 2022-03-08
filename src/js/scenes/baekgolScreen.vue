@@ -52,7 +52,7 @@ export default {
       this.state = nextState;
       if (prevState === BaekgolState.Idle && nextState === BaekgolState.Diary) {
         sound.stop("koongkoong2");
-        sound.play("baekgolDiary");
+        setTimeout(() => sound.play("baekgolDiary"), 3000);
       }
       if (prevState === BaekgolState.Diary && nextState === BaekgolState.Idle) {
         sound.play("koongkoong2");

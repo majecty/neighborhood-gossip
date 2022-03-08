@@ -8,9 +8,6 @@ export default {
     this.baekgolDiaryText = baekgolDiaryText;
   },
   mounted() {
-    setTimeout(() => {
-      sound.play("diary");
-    }, 3000);
   }
 };
 </script>

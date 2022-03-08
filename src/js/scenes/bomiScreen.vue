@@ -51,9 +51,11 @@ export default {
       if (prevState === BomiState.Idle && nextState === BomiState.BomiLog) {
         sound.play("diary");
         sound.stop("koongkoong");
-        sound.play("bomiLog");
+        setTimeout(() => {
+          sound.play("bomiLog");
+        }, 3000);
       } else if (prevState === BomiState.BomiLog && nextState === BomiState.BomiLogText) {
-        sound.play("diary");
+        /*sound.play("diary");*/
       } else if (prevState === BomiState.BomiLog && nextState === BomiState.Idle) {
         sound.stop("bomiLog");
         sound.play("koongkoong");
