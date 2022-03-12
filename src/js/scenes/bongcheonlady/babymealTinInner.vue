@@ -1,13 +1,16 @@
 <script>
 import VisibleRegion from "../visibleRegion.vue"
+import RightButton from "../common/rightButton.vue";
 
 export default {
   name: "BabymealTinInner",
   emits: [
-    "back"
+    "back",
+    "next"
   ],
   components: {
-    VisibleRegion
+    VisibleRegion,
+    RightButton,
   },
 };
 </script>
@@ -18,6 +21,7 @@ export default {
 <VisibleRegion>
   <button id="babymeal-tin-inner-prev" class="interactive-button" @click="$emit('back')" />
 </VisibleRegion>
+<RightButton @next="$emit('next')" />
 </template>
 
 <style>
