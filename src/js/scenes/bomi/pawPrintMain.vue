@@ -1,12 +1,19 @@
 <script>
+import RightButton from "../common/rightButton.vue";
+
 export default {
   name: "PawPrintMain",
+  emits: ["next"],
+  components: {
+    RightButton,
+  },
 };
 </script>
 
 <template>
 <div id="paw-print" class="absolute">
 </div>
+<RightButton @next="$emit('next')"/>
 </template>
 
 <style>

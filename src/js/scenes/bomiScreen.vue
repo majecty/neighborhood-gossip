@@ -1,6 +1,7 @@
 <script>
 import PawPrintButton from "./bomi/pawPrintButton.vue";
 import PawPrintMain from "./bomi/pawPrintMain.vue";
+import PawPrintPhoto from "./bomi/pawPrintPhoto.vue";
 import BomiSpottedButton from "./bomi/bomiSpottedButton.vue";
 import BomiSpottedMain from "./bomi/bomiSpottedMain.vue";
 import BomiLogButton from "./bomi/bomiLogButton.vue";
@@ -17,6 +18,7 @@ export default {
   components: {
     PawPrintButton,
     PawPrintMain,
+    PawPrintPhoto,
     BomiSpottedButton,
     BomiSpottedMain,
     BomiLogButton,
@@ -66,6 +68,9 @@ export default {
         case BomiState.PawPrint:
           this.state = BomiState.Idle;
           break;
+        case BomiState.PawPrintPhoto:
+          this.state = BomiState.PawPrint;
+          break;
         case BomiState.BomiSpotted:
           this.state = BomiState.Idle;
           break;
@@ -80,6 +85,13 @@ export default {
           break;
       }
     },
+    next() {
+      switch(this.state) {
+        case BomiState.PawPrint:
+          this.state = BomiState.PawPrintPhoto;
+          break;
+      }
+    },
   },
 };
 </script>
@@ -89,7 +101,8 @@ export default {
   <BomiSpottedButton v-if="state === BomiState.Idle" @click="onClick(BomiState.BomiSpotted)"></BomiSpottedButton>
   <BomiLogButton v-if="state === BomiState.Idle" @click="onClick(BomiState.BomiLog)"></BomiLogButton>
 
-  <PawPrintMain v-if="state === BomiState.PawPrint"></PawPrintMain>
+  <PawPrintMain v-if="state === BomiState.PawPrint" @next="next"></PawPrintMain>
+  <PawPrintPhoto v-if="state === BomiState.PawPrintPhoto" @next="next" @back="back"></PawPrintPhoto>
   <BomiSpottedMain v-if="state === BomiState.BomiSpotted"></BomiSpottedMain>
   <BomiLogMain v-if="state === BomiState.BomiLog"
     @click="onClick(BomiState.BomiLogText)" ></BomiLogMain>

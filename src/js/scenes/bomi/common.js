@@ -1,6 +1,7 @@
 export const BomiState = {
   Idle: "Idle",
   PawPrint: "PawPrint",
+  PawPrintPhoto: "PawPrintPhoto",
   BomiSpotted: "BomiSpotted",
   BomiLog: "BomiLog",
   BomiLogText: "BomiLogText",
@@ -12,6 +13,8 @@ export function parseBomiState(state) {
       return BomiState.Idle;
     case "PawPrint":
       return BomiState.PawPrint;
+    case "PawPrintPhoto":
+      return BomiState.PawPrintPhoto;
     case "BomiSpotted":
       return BomiState.BomiSpotted;
     case "BomiLog":
