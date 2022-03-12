@@ -22,8 +22,13 @@ export default {
     return {
       screen,
       background,
-      showIdle: false
+      showIdle: false,
     };
+  },
+  computed: {
+    showButtons() {
+      return !this.showIdle;
+    },
   },
   methods: {
     onClick(clicked) {
@@ -48,6 +53,11 @@ export default {
           break;
         case "info":
           this.screen.setScreen(SceneNames.InfoPage);
+          this.background.setBackground(this.screen.screen);
+          this.movingToInfo = true;
+          break;
+        case "critic":
+          this.screen.setScreen(SceneNames.CriticPage);
           this.background.setBackground(this.screen.screen);
           this.movingToInfo = true;
           break;
@@ -90,6 +100,10 @@ export default {
   v-if="!showIdle"
   v-on:click="this.onClick('info')"
 />
+<button class="critic-button interactive-button"
+  v-if="!showIdle"
+  v-on:click="this.onClick('critic')"
+  />
 
 <visible-region>
   <button class="stair-enter-button interactive-button"
@@ -140,5 +154,17 @@ export default {
   top: 330px;
   left: 570px;
   transform: scale(0.1);
+}
+
+.critic-button {
+  --width: 531;
+  --height: 750;
+  --ratio: 0.1;
+  background-image: url("/img/mainStreet/critic_icon.png");
+  width: calc(1px * var(--width) * var(--ratio));
+  height: calc(1px * var(--height) * var(--ratio));
+  background-size: 100% 100%;
+  top: 930px;
+  left: 220px;
 }
 </style>

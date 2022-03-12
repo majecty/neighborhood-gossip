@@ -4,7 +4,8 @@ export const SceneNames = {
   BaekgolStreet: "BaekgolStreet",
   BongcheonladyStreet: "BongcheonladyStreet",
   BomiStreet: "BomiStreet",
-  InfoPage: "InfoPage"
+  InfoPage: "InfoPage",
+  CriticPage: "CriticPage",
 };
 
 export const BackgroundCSS = {
@@ -13,7 +14,8 @@ export const BackgroundCSS = {
   [SceneNames.BaekgolStreet]: "img-backgol-street",
   [SceneNames.BongcheonladyStreet]: "img-bongcheonlady-street",
   [SceneNames.BomiStreet]: "img-bomi-street",
-  [SceneNames.InfoPage]: "img-info-page"
+  [SceneNames.InfoPage]: "img-info-page",
+  [SceneNames.CriticPage]: "img-main-street",
 };
 
 export const MainStreetCSS = BackgroundCSS[SceneNames.MainStreet];

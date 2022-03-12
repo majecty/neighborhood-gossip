@@ -8,6 +8,7 @@ import BaekgolScreen from "./baekgolScreen.vue";
 import BongcheonladyScreen from "./bongcheonladyScreen.vue";
 import BomiScreen from "./bomiScreen.vue";
 import InfoPage from "./infoPage.vue";
+import CriticPage from "./criticPage.vue";
 import {SceneNames} from "./common";
 import { sound } from "../sound";
 
@@ -24,6 +25,7 @@ export default {
     BongcheonladyScreen,
     BomiScreen,
     InfoPage,
+    CriticPage,
   },
   data() {
     return {
@@ -35,7 +37,7 @@ export default {
     back(scene) {
       this.screen.setScreen(SceneNames.MainStreet);
       this.background.setBackground(SceneNames.MainStreet);
-      if (scene !== 'info') {
+      if (scene !== 'info' && scene !== 'critic') {
         sound.play("transition");
       }
     },
@@ -57,4 +59,7 @@ export default {
     @back="back('bomi')" />
   <InfoPage v-if="screen.screen === SceneNames.InfoPage"
     @back="back('info')" />
+  <CriticPage v-if="screen.screen === SceneNames.CriticPage"
+    @back="back('critic')" />
+
 </template>
