@@ -4,6 +4,7 @@ import NameTagMain from "./bongcheonlady/nameTagMain.vue";
 import PhoneBookButton from "./bongcheonlady/phoneBookButton.vue";
 import PhoneBookMain from "./bongcheonlady/phoneBookMain.vue";
 import PhoneBookPhoto from "./bongcheonlady/phoneBookPhoto.vue";
+import PhoneBookPhoto2 from "./bongcheonlady/phoneBookPhoto2.vue";
 import HandPrintsButton from "./bongcheonlady/handPrintsButton.vue";
 import HandPrintsMain from "./bongcheonlady/handPrintsMain.vue";
 import BabymealTinButton from "./bongcheonlady/babymealTinButton.vue";
@@ -23,6 +24,7 @@ export default {
     PhoneBookButton,
     PhoneBookMain,
     PhoneBookPhoto,
+    PhoneBookPhoto2,
     HandPrintsButton,
     HandPrintsMain,
     BabymealTinButton,
@@ -66,6 +68,12 @@ export default {
         case BongcheonladyState.BabymealTin:
           this.state = BongcheonladyState.BabymealTinInner;
           break;
+        case BongcheonladyState.PhoneBook:
+          this.state = BongcheonladyState.PhoneBookPhoto;
+          break;
+        case BongcheonladyState.PhoneBookPhoto:
+          this.state = BongcheonladyState.PhoneBookPhoto2;
+          break;
       }
     },
     back() {
@@ -78,6 +86,9 @@ export default {
           break;
         case BongcheonladyState.PhoneBookPhoto:
           this.state = BongcheonladyState.PhoneBook;
+          break;
+        case BongcheonladyState.PhoneBookPhoto2:
+          this.state = BongcheonladyState.PhoneBookPhoto;
           break;
         case BongcheonladyState.HandPrints:
           this.state = BongcheonladyState.Idle;
@@ -113,9 +124,14 @@ export default {
 
   <NameTagMain v-if="state === BongcheonladyState.NameTag" />
   <PhoneBookMain v-if="state === BongcheonladyState.PhoneBook"
-    @click="onClick(BongcheonladyState.PhoneBookPhoto) "/>
+    @next="next"/>
   <PhoneBookPhoto v-if="state === BongcheonladyState.PhoneBookPhoto"
-    @click="onClick(BongcheonladyState.PhoneBook)" />
+    @back="back"
+    @next="next"
+    />
+  <PhoneBookPhoto2 v-if="state === BongcheonladyState.PhoneBookPhoto2"
+    @back="back"
+  />
   <HandPrintsMain v-if="state === BongcheonladyState.HandPrints" />
   <BabymealTinMain v-if="state === BongcheonladyState.BabymealTin" @next="next" />
   <BabymealTinInner v-if="state === BongcheonladyState.BabymealTinInner" @back="back" />

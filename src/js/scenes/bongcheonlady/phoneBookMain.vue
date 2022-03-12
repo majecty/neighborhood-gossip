@@ -1,13 +1,17 @@
 <script> 
 import VisibleRegion from "../visibleRegion.vue";
+import LeftButton from "../common/leftButton.vue";
+import RightButton from "../common/rightButton.vue";
 
 export default {
   name: "PhoneBookMain",
   emits: [
-    "click",
+    "back",
+    "next",
   ],
   components: {
     VisibleRegion,
+    RightButton,
   },
 };
 </script>
@@ -15,11 +19,8 @@ export default {
 <template>
 <div id="phone-book" class="absolute">
 </div>
-<VisibleRegion>
-  <button id="phone-book-next-image" class="interactive-button"
-    @click="$emit('click')">
-  </button>
-</VisibleRegion>
+<LeftButton @back="$emit('back')" />
+<RightButton @next="$emit('next')" />
 </template>
 
 <style>
